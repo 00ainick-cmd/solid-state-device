@@ -751,196 +751,196 @@ const QUESTION_BANK = {
 
   // ==================== ROUND 2: DOUBLE JEOPARDY ====================
 
-  "Series Circuits": [
+  "Transistors - Basics": [
     {
-      id: "ser-201",
+      id: "tra-201",
       difficulty: 2,
       pointValue: 200,
       timeLimit: 12,
-      question: "In a series circuit, the total resistance (Rt) is calculated by:",
-      answers: ["Averaging all resistors", "Using the smallest resistor value", "Adding all individual resistances", "Rt = (R1*R2)/(R1+R2)"],
-      correctIndex: 2,
-      explanation: "In a series circuit, resistances add up: Rt = R1 + R2 + R3 + ...",
-      reference: "Series Circuit Rules"
+      question: "The three terminals of a transistor are:",
+      answers: ["Anode, Cathode, Grid", "Base, Collector, Emitter", "Gate, Drain, Source", "Input, Output, Ground"],
+      correctIndex: 1,
+      explanation: "Transistors have Base (control), Collector (current inlet), and Emitter (current outlet).",
+      reference: "Transistor Terminals"
     },
     {
-      id: "ser-202",
+      id: "tra-202",
       difficulty: 3,
       pointValue: 400,
       timeLimit: 14,
-      question: "What is the rule for current in a series circuit?",
-      answers: ["It is the same through all components", "It divides at each component", "It is highest at the last component", "It is zero at the end of the loop"],
-      correctIndex: 0,
-      explanation: "A series circuit has only one path, so the current (flow) must be the same everywhere.",
-      reference: "Series Circuit Rules"
+      question: "A transistor can function as:",
+      answers: ["Only an amplifier", "Only a switch", "Either a switch or amplifier", "A voltage regulator only"],
+      correctIndex: 2,
+      explanation: "Transistors work as electronic switches (ON/OFF control) or amplifiers (signal strengthening).",
+      reference: "Transistor Applications"
     },
     {
-      id: "ser-203",
+      id: "tra-203",
       difficulty: 4,
       pointValue: 600,
       timeLimit: 16,
-      question: "Three resistors are in series: 10 ohms, 20 ohms, and 30 ohms. What is the total resistance?",
-      answers: ["30 Ohms", "5.45 Ohms", "60 Ohms", "6000 Ohms"],
-      correctIndex: 2,
-      explanation: "Rt = R1 + R2 + R3. 10 + 20 + 30 = 60 Ohms.",
-      reference: "Series Circuit Calculation"
+      question: "Name a common transistor part number used in avionics:",
+      answers: ["1N4001", "2N2222", "7805", "LM317"],
+      correctIndex: 1,
+      explanation: "2N2222 is a popular general-purpose NPN transistor. (1N4001 is a diode, 7805 and LM317 are regulators)",
+      reference: "Component Identification"
     },
     {
-      id: "ser-204",
+      id: "tra-204",
       difficulty: 4,
       pointValue: 800,
       timeLimit: 18,
-      question: "This law states that the sum of all voltage drops in a series loop equals the source voltage.",
-      answers: ["Ohm's Law", "Kirchhoff's Current Law (KCL)", "Watt's Law", "Kirchhoff's Voltage Law (KVL)"],
-      correctIndex: 3,
-      explanation: "Kirchhoff's Voltage Law (KVL) describes how voltage is distributed in a closed loop.",
-      reference: "Kirchhoff's Voltage Law"
+      question: "Power transistors require this to prevent thermal failure:",
+      answers: ["A fuse", "A heat sink", "A capacitor", "A resistor"],
+      correctIndex: 1,
+      explanation: "Heat sinks dissipate heat from power transistors to prevent overheating and failure.",
+      reference: "Thermal Management"
     },
     {
-      id: "ser-205",
+      id: "tra-205",
       difficulty: 5,
       pointValue: 1000,
       timeLimit: 20,
-      question: "If one of three bulbs connected in series burns out (fails open), what happens to the other two?",
-      answers: ["They get brighter", "They get dimmer", "They both go out", "They are unaffected"],
+      question: "When testing a good transistor in diode mode, collector-to-emitter should read:",
+      answers: ["0.6V both directions", "0.6V one way, 0V the other", "OL (open) both directions", "Low resistance both directions"],
       correctIndex: 2,
-      explanation: "A burned-out bulb creates an open circuit, breaking the only path for current and stopping all flow.",
-      reference: "Series Circuit Troubleshooting"
+      explanation: "A good transistor shows OL (open) both ways when testing collector-to-emitter. Base junctions read ~0.6V forward.",
+      reference: "Transistor Testing"
     }
   ],
 
-  "Parallel Circuits": [
+  "Component Testing": [
     {
-      id: "par-201",
+      id: "test-201",
       difficulty: 2,
       pointValue: 200,
       timeLimit: 12,
-      question: "What is the rule for voltage in a parallel circuit?",
-      answers: ["It is the same across all branches", "It divides equally among all branches", "It is zero across all branches", "It is highest at the first branch"],
-      correctIndex: 0,
-      explanation: "Components in parallel are connected across the same two points, so they must have the same voltage.",
-      reference: "Parallel Circuit Rules"
+      question: "Before testing any semiconductor with a multimeter, you must:",
+      answers: ["Heat it first", "Remove all power", "Apply maximum voltage", "Short the terminals"],
+      correctIndex: 1,
+      explanation: "Always remove power before testing semiconductors to prevent damage and ensure accurate readings.",
+      reference: "Testing Safety"
     },
     {
-      id: "par-202",
+      id: "test-202",
       difficulty: 3,
       pointValue: 400,
       timeLimit: 14,
-      question: "This law states that the total current entering a junction must equal the total current leaving it.",
-      answers: ["Ohm's Law", "Kirchhoff's Current Law (KCL)", "Watt's Law", "Kirchhoff's Voltage Law (KVL)"],
-      correctIndex: 1,
-      explanation: "Kirchhoff's Current Law (KCL) describes how current splits in parallel branches.",
-      reference: "Kirchhoff's Current Law"
+      question: "What multimeter mode is used to test diodes and transistor junctions?",
+      answers: ["Voltage mode", "Resistance mode", "Diode test mode", "Continuity mode"],
+      correctIndex: 2,
+      explanation: "Diode test mode shows forward voltage drop (typically 0.5-0.8V) or OL for proper testing.",
+      reference: "Multimeter Usage"
     },
     {
-      id: "par-203",
+      id: "test-203",
       difficulty: 4,
       pointValue: 600,
       timeLimit: 16,
-      question: "Two 10-ohm resistors are in parallel. What is their total resistance?",
-      answers: ["20 Ohms", "10 Ohms", "5 Ohms", "0 Ohms"],
+      question: "A diode that shows low resistance in BOTH directions is:",
+      answers: ["Good and working", "Open (failed)", "Shorted (failed)", "Needs higher voltage"],
       correctIndex: 2,
-      explanation: "Using (R1*R2)/(R1+R2): (10*10)/(10+10) = 100/20 = 5 Ohms. Total R is always less than the smallest branch.",
-      reference: "Parallel Circuit Calculation"
+      explanation: "Both directions reading low = shorted diode. Good diode: low forward, OL reverse.",
+      reference: "Diode Troubleshooting"
     },
     {
-      id: "par-204",
+      id: "test-204",
       difficulty: 4,
       pointValue: 800,
       timeLimit: 18,
-      question: "In a parallel circuit, total current (It) is calculated by:",
-      answers: ["Using the smallest branch current", "Averaging all branch currents", "Adding all individual branch currents", "It = I1 x I2 x I3..."],
-      correctIndex: 2,
-      explanation: "Total current is the sum of the currents in each branch: It = I1 + I2 + I3 + ...",
-      reference: "Parallel Circuit Rules"
+      question: "Visual signs of a failed transistor include:",
+      answers: ["Shiny new appearance", "Cracks, burns, or discoloration", "Bright colors", "Smooth plastic case"],
+      correctIndex: 1,
+      explanation: "Cracks, burns, melted plastic, or discoloration indicate overheating or overvoltage damage.",
+      reference: "Visual Inspection"
     },
     {
-      id: "par-205",
+      id: "test-205",
       difficulty: 5,
       pointValue: 1000,
       timeLimit: 20,
-      question: "If one of three bulbs connected in parallel burns out (fails open), what happens to the other two?",
-      answers: ["They get brighter", "They get dimmer", "They both go out", "They are unaffected"],
-      correctIndex: 3,
-      explanation: "Each parallel branch is independent. An open in one branch does not affect the others.",
-      reference: "Parallel Circuit Troubleshooting"
+      question: "When replacing a Zener diode, the most critical specification to match is:",
+      answers: ["Physical size", "Zener voltage (Vz)", "Wire color", "Manufacturing date"],
+      correctIndex: 1,
+      explanation: "Zener voltage (Vz) must match for proper circuit regulation. Wrong Vz = circuit malfunction.",
+      reference: "Component Replacement"
     }
   ],
 
-  "Multimeter & Troubleshooting": [
+  "Safety & Troubleshooting": [
     {
-      id: "mtr-201",
+      id: "safe-201",
       difficulty: 2,
       pointValue: 200,
       timeLimit: 12,
-      question: "To measure voltage (VDC), a multimeter must be connected:",
-      answers: ["In series with the circuit", "In parallel (across) the component", "With the circuit power OFF", "In the AMPS jack"],
+      question: "ESD stands for:",
+      answers: ["Electronic Safety Device", "Electrostatic Discharge", "Emergency Shutdown", "Extra Semiconductor Diode"],
       correctIndex: 1,
-      explanation: "Voltage is a measurement of potential difference, so the meter must be placed in parallel (across) the points.",
-      reference: "Multimeter Usage"
+      explanation: "Electrostatic Discharge (ESD) - static electricity that can destroy semiconductors.",
+      reference: "ESD Basics"
     },
     {
-      id: "mtr-202",
+      id: "safe-202",
       difficulty: 3,
       pointValue: 400,
       timeLimit: 14,
-      question: "To measure current (AMPS), a multimeter must be connected:",
-      answers: ["In series (in-line) with the circuit", "In parallel (across) the component", "With the circuit power OFF", "In the VOLTS jack"],
-      correctIndex: 0,
-      explanation: "Current is a measure of flow, so the circuit must be opened and the meter placed in series (in-line).",
-      reference: "Multimeter Usage"
+      question: "The proper ESD protection when handling semiconductors includes:",
+      answers: ["Rubber gloves only", "Grounding wrist strap and anti-static mat", "No special precautions needed", "Wet hands"],
+      correctIndex: 1,
+      explanation: "Always use grounding wrist strap and anti-static mat/bags to prevent ESD damage.",
+      reference: "ESD Protection"
     },
     {
-      id: "mtr-203",
+      id: "safe-203",
       difficulty: 4,
       pointValue: 600,
       timeLimit: 16,
-      question: "What is the most critical safety step before measuring resistance (Ohms)?",
-      answers: ["Set the meter to the highest range", "Verify the meter's battery is good", "Ensure all circuit power is OFF", "Use alligator clips for safety"],
-      correctIndex: 2,
-      explanation: "An ohmmeter sends its own voltage. Measuring a powered circuit will, at minimum, destroy the meter.",
-      reference: "Multimeter Safety"
+      question: "If a Zener voltage regulator circuit has lost regulation, the likely failure is:",
+      answers: ["The series resistor", "The Zener diode", "The power source", "The wiring"],
+      correctIndex: 1,
+      explanation: "Failed Zener diode is most common cause of voltage regulation loss. Check Zener first.",
+      reference: "Troubleshooting Procedures"
     },
     {
-      id: "mtr-204",
+      id: "safe-204",
       difficulty: 4,
       pointValue: 800,
       timeLimit: 18,
-      question: "A technician reads 'OL' or 'Infinity' on their ohmmeter when checking a wire. This indicates:",
-      answers: ["A 'short circuit' to ground", "A good, low-resistance wire", "An 'open circuit' or break", "The wire has high current"],
+      question: "Using the wrong transistor part number can result in:",
+      answers: ["Better performance", "No difference", "Circuit failure or fire", "Longer life"],
       correctIndex: 2,
-      explanation: "'OL' (Over Limit) means the resistance is too high to measure, indicating a break (an open circuit).",
-      reference: "Troubleshooting Opens"
+      explanation: "Wrong transistor = wrong voltage/current ratings = possible circuit failure, component damage, or fire hazard.",
+      reference: "Safety & Replacement"
     },
     {
-      id: "mtr-205",
+      id: "safe-205",
       difficulty: 5,
       pointValue: 1000,
       timeLimit: 20,
-      question: "A technician reads 0.2 Ohms when measuring from a wire to the aircraft airframe. This indicates:",
-      answers: ["A 'short circuit' to ground", "A good, isolated wire", "An 'open circuit' in the wire", "The wire's normal resistance"],
-      correctIndex: 0,
-      explanation: "A very low resistance path from a wire to ground (airframe) is the definition of a short circuit.",
-      reference: "Troubleshooting Shorts"
+      question: "Before removing a power transistor from its heat sink, you should:",
+      answers: ["Apply more thermal paste", "Document heat sink orientation and hardware", "Heat it up first", "Nothing special needed"],
+      correctIndex: 1,
+      explanation: "Document orientation and hardware placement, then clean and reapply thermal paste during reassembly.",
+      reference: "Maintenance Procedures"
     }
   ],
 
   // ==================== FINAL JEOPARDY ====================
 
   FINAL: {
-    cat: "Applied Circuit Troubleshooting",
+    cat: "Solid State Device Troubleshooting",
     difficulty: 5,
     timeLimit: 30,
-    question: "A component does not work. A technician measures 28V at the component's positive terminal and 26V at its ground terminal (relative to airframe). The circuit breaker is NOT tripped. What is the most likely fault?",
+    question: "A technician tests a transistor with diode mode. Base-to-Emitter: 0.65V forward, OL reverse. Base-to-Collector: 0.65V forward, OL reverse. Collector-to-Emitter: OL both directions. What is the transistor's condition?",
     answers: [
-      "A short circuit in the power wire",
-      "A high-resistance (open) ground connection",
-      "A failed (open) component",
-      "A shorted (failed) component"
+      "The transistor is shorted and must be replaced",
+      "The transistor is good and functioning normally",
+      "The transistor is open and must be replaced",
+      "The transistor cannot be tested this way"
     ],
     correctIndex: 1,
-    explanation: "A good ground should read near 0V. Reading 26V on the ground wire means the ground path is open or has high resistance, and the voltage is 'floating' up to the supply voltage.",
-    reference: "Troubleshooting Ground Faults"
+    explanation: "These readings indicate a GOOD transistor. Base junctions behave like diodes (~0.6-0.7V forward, OL reverse), while Collector-Emitter should be OL both ways when not powered.",
+    reference: "Transistor Testing Procedures"
   }
 };
 

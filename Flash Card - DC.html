@@ -289,201 +289,59 @@
   // === TRANSISTORS ===
   {
     "term": "Transistor",
-    "definition": "A three-terminal semiconductor device that can amplify current or act as an electronic switch. The two main types are Bipolar Junction Transistor (BJT) and Field Effect Transistor (FET). Fundamental building block of all modern avionics.",
-    "analogy": "An electronic valve or relay controlled by a small signal.",
+    "definition": "A three-terminal semiconductor device used as an electronic switch or amplifier in avionics. Has three terminals: base (control), collector, and emitter. A small current at the base controls a larger current between collector and emitter.",
+    "analogy": "An electronic relay or valve controlled by a small signal.",
     "unit": "SSD 104 - Transistors",
     "tags": "transistors|fundamentals|components"
   },
   {
-    "term": "Bipolar Junction Transistor (BJT)",
-    "definition": "A three-layer semiconductor device (NPN or PNP) with three terminals: base, collector, and emitter. A small base current controls a larger collector-emitter current. Used for amplification and switching.",
-    "analogy": "A water faucet where a small turn controls large flow.",
+    "term": "Transistor Terminals",
+    "definition": "Base (B) - control terminal that turns the transistor on/off. Collector (C) - where main current enters. Emitter (E) - where main current exits. The base controls current flow between collector and emitter.",
+    "analogy": "Base is like a gate valve handle, collector and emitter are the inlet and outlet.",
     "unit": "SSD 104 - Transistors",
-    "tags": "transistors|BJT|fundamentals"
-  },
-  {
-    "term": "NPN Transistor",
-    "definition": "A BJT with N-type emitter and collector separated by a thin P-type base. Turns ON when base is positive relative to emitter. Conventional current flows from collector to emitter. Most common type in avionics.",
-    "analogy": "A normally-off switch activated by positive signal.",
-    "unit": "SSD 104 - Transistors",
-    "tags": "transistors|BJT|NPN"
-  },
-  {
-    "term": "PNP Transistor",
-    "definition": "A BJT with P-type emitter and collector separated by a thin N-type base. Turns ON when base is negative relative to emitter. Current flows from emitter to collector. Complementary to NPN.",
-    "analogy": "A normally-off switch activated by negative signal.",
-    "unit": "SSD 104 - Transistors",
-    "tags": "transistors|BJT|PNP"
-  },
-  {
-    "term": "Base (B)",
-    "definition": "The control terminal of a BJT. A small base current (typically μA to mA) controls the much larger collector current. The thin middle layer of the transistor structure.",
-    "analogy": "The control knob that regulates the flow.",
-    "unit": "SSD 104 - Transistors",
-    "tags": "transistors|BJT|terminals"
-  },
-  {
-    "term": "Collector (C)",
-    "definition": "The terminal where main current enters an NPN transistor (or exits a PNP). Connected to the more heavily doped region. Typically connected to the power supply through a load resistor.",
-    "analogy": "The main inlet for the controlled flow.",
-    "unit": "SSD 104 - Transistors",
-    "tags": "transistors|BJT|terminals"
-  },
-  {
-    "term": "Emitter (E)",
-    "definition": "The terminal where main current exits an NPN transistor (or enters a PNP). The reference point for transistor biasing. Usually connected to ground in NPN circuits.",
-    "analogy": "The main outlet for the controlled flow.",
-    "unit": "SSD 104 - Transistors",
-    "tags": "transistors|BJT|terminals"
-  },
-  {
-    "term": "Beta (β) or hFE",
-    "definition": "The current gain of a transistor, the ratio of collector current to base current: β = Ic/Ib. Typical values range from 50 to 300. Used to calculate base current needed for desired collector current.",
-    "analogy": "The amplification factor - how much the small control signal is multiplied.",
-    "unit": "SSD 104 - Transistors",
-    "tags": "transistors|BJT|specifications"
-  },
-  {
-    "term": "Transistor Saturation",
-    "definition": "The ON state where maximum collector current flows and collector-emitter voltage (Vce) is minimum (typically 0.2V). Used when transistor operates as a switch. Both junctions are forward biased.",
-    "analogy": "Fully open valve with maximum flow.",
-    "unit": "SSD 104 - Transistors",
-    "tags": "transistors|BJT|operation"
-  },
-  {
-    "term": "Transistor Cutoff",
-    "definition": "The OFF state where base current is zero, collector current is zero (except tiny leakage), and Vce equals supply voltage. Used for switching applications. Both junctions are reverse biased.",
-    "analogy": "Fully closed valve with no flow.",
-    "unit": "SSD 104 - Transistors",
-    "tags": "transistors|BJT|operation"
+    "tags": "transistors|terminals|identification"
   },
   {
     "term": "Transistor as Switch",
-    "definition": "Using a transistor to switch loads ON/OFF by driving it between saturation (ON) and cutoff (OFF). Common in digital circuits, relay drivers, and LED drivers in avionics. More efficient than using as amplifier.",
-    "analogy": "An electronic relay controlled by low-power signal.",
+    "definition": "Transistors can switch loads ON/OFF electrically. When base has correct voltage, transistor conducts (ON). When base voltage is removed, transistor stops conducting (OFF). Used for relay drivers, LED drivers, and control circuits in avionics.",
+    "analogy": "An electronic switch with no moving parts.",
     "unit": "SSD 104 - Transistors",
     "tags": "transistors|applications|switching"
   },
   {
     "term": "Transistor as Amplifier",
-    "definition": "Using a transistor in its active region to increase signal strength. Small changes in base current cause large changes in collector current. Used in audio, RF, and sensor circuits.",
-    "analogy": "A megaphone that makes quiet signals loud.",
+    "definition": "Transistors can amplify weak signals. A small change in base current causes a large change in collector current. Used in audio circuits, sensor signal conditioning, and radio frequency (RF) applications in aircraft.",
+    "analogy": "A megaphone that makes quiet signals loud enough to use.",
     "unit": "SSD 104 - Transistors",
     "tags": "transistors|applications|amplification"
   },
   {
-    "term": "Field Effect Transistor (FET)",
-    "definition": "A voltage-controlled transistor with three terminals: gate, drain, and source. Unlike BJT which is current-controlled, FET is controlled by gate voltage. Very high input impedance, used extensively in modern avionics.",
-    "analogy": "A valve controlled by electric field instead of current.",
-    "unit": "SSD 104 - Transistors",
-    "tags": "transistors|FET|fundamentals"
-  },
-  {
-    "term": "MOSFET",
-    "definition": "Metal-Oxide-Semiconductor FET. Most common type of FET, with extremely high input impedance. Used in digital circuits, power control, and integrated circuits. Gate is insulated from channel by oxide layer.",
-    "analogy": "A super-efficient switch with virtually no control power needed.",
-    "unit": "SSD 104 - Transistors",
-    "tags": "transistors|FET|MOSFET"
-  },
-  {
     "term": "Transistor Testing",
-    "definition": "Use diode test mode with power OFF. For NPN: base-emitter and base-collector should show ~0.6V forward, reverse shows O.L. For PNP: reverse these readings. Collector-emitter shows O.L. both ways if good.",
-    "analogy": "Testing if the control valve operates correctly.",
+    "definition": "Use multimeter in diode test mode with power OFF. Test base-to-emitter and base-to-collector: should show ~0.6V one direction, OL (open) the other. Collector-to-emitter should show OL both directions. If all readings are low, transistor is shorted. If all are OL, transistor is open.",
+    "analogy": "Checking if the electronic valve operates correctly before installation.",
     "unit": "SSD 104 - Transistors",
     "tags": "transistors|testing|troubleshooting"
   },
-
-  // === INTEGRATED CIRCUITS (ICs) ===
   {
-    "term": "Integrated Circuit (IC)",
-    "definition": "A miniaturized electronic circuit consisting of thousands to billions of transistors, diodes, resistors, and capacitors on a single semiconductor chip. The foundation of modern avionics computers, autopilots, and digital systems.",
-    "analogy": "An entire electronic factory on a silicon chip.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|fundamentals|components"
+    "term": "Transistor Identification",
+    "definition": "Transistors have part numbers printed on the case (e.g., 2N2222, 2N3904). The package style varies: TO-92 (small plastic), TO-220 (power, with metal tab), and surface mount styles. Always verify part number and pin configuration before replacement.",
+    "analogy": "Like checking the model number before replacing a component.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|identification|maintenance"
   },
   {
-    "term": "Digital IC",
-    "definition": "ICs that process discrete (on/off) signals using binary logic (0s and 1s). Includes logic gates, microprocessors, memory chips, and digital controllers. Used in flight computers and digital displays.",
-    "analogy": "Electronic circuits that speak in yes/no, on/off language.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|digital|applications"
+    "term": "Transistor Heat Sinks",
+    "definition": "Power transistors handling significant current generate heat and require heat sinks - metal fins that dissipate heat to prevent failure. Always reinstall heat sink with thermal paste when replacing power transistors.",
+    "analogy": "Cooling fins that pull heat away from hot components.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|thermal_management|safety"
   },
   {
-    "term": "Analog IC",
-    "definition": "ICs that process continuous signals like voltage, current, temperature, or pressure. Includes operational amplifiers (op-amps), voltage regulators, and sensor interfaces. Critical for sensor processing in avionics.",
-    "analogy": "Electronic circuits that handle smooth, continuous signals.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|analog|applications"
-  },
-  {
-    "term": "Operational Amplifier (Op-Amp)",
-    "definition": "A high-gain analog IC with differential inputs and single output. Used for signal amplification, filtering, and mathematical operations. Standard building block in sensor interfaces and signal conditioning.",
-    "analogy": "A precision amplifier that can be configured for many tasks.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|analog|op-amp"
-  },
-  {
-    "term": "Logic Gate",
-    "definition": "Basic digital IC building block that performs Boolean operations (AND, OR, NOT, NAND, NOR, XOR). Multiple gates combine to create complex digital systems like processors and controllers.",
-    "analogy": "Electronic decision maker with specific rules.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|digital|logic"
-  },
-  {
-    "term": "Microcontroller",
-    "definition": "A complete computer on a single IC chip, including processor, memory, and I/O peripherals. Used extensively in avionics for engine management, flight controls, and system monitoring. Examples: Arduino, PIC, ARM Cortex.",
-    "analogy": "A tiny computer brain on a chip.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|digital|microcontrollers"
-  },
-  {
-    "term": "Voltage Regulator IC",
-    "definition": "An IC designed to maintain constant output voltage despite input variations. Common types: 7805 (+5V), 7812 (+12V), LM317 (adjustable). Essential for providing stable power to sensitive avionics circuits.",
-    "analogy": "An automatic voltage stabilizer on a chip.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|analog|power_regulation"
-  },
-  {
-    "term": "IC Package Types",
-    "definition": "Physical formats for ICs: DIP (Dual Inline Package) for through-hole, SMD (Surface Mount Device) for compact boards, QFP (Quad Flat Pack), BGA (Ball Grid Array). Package type affects replacement and testing procedures.",
-    "analogy": "Different container styles for the same electronic contents.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|packaging"
-  },
-  {
-    "term": "IC Pin Numbering",
-    "definition": "Standardized numbering system: Pin 1 marked with dot or notch, numbers increase counter-clockwise from top view. Critical for proper installation and troubleshooting. Incorrect installation can destroy the IC.",
-    "analogy": "The addressing system for IC connections.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|identification|safety"
-  },
-  {
-    "term": "IC Power Pins",
-    "definition": "Vcc/Vdd (positive supply) and GND/Vss (ground) pins that power the IC. Must be connected correctly or IC will not function and may be damaged. Typically Vcc is highest pin number and GND is middle pin on DIP packages.",
-    "analogy": "The power inlet and outlet for the chip.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|power|safety"
-  },
-  {
-    "term": "Static Sensitive Devices",
-    "definition": "ICs (especially CMOS and MOSFET-based) that can be damaged by electrostatic discharge (ESD). Require anti-static handling: wrist straps, grounded mats, anti-static bags. Even small static shocks can destroy these devices.",
-    "analogy": "Delicate components that need special protective handling.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|safety|ESD"
-  },
-  {
-    "term": "IC Troubleshooting",
-    "definition": "Check power supply voltages first, verify proper pin connections, test with known-good IC if available, check for physical damage or overheating. Many ICs cannot be tested in-circuit and require replacement for diagnosis.",
-    "analogy": "Systematic detective work to find the failing component.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|troubleshooting|testing"
-  },
-  {
-    "term": "Heat Sink",
-    "definition": "Metal device attached to power transistors and voltage regulator ICs to dissipate heat. Prevents thermal failure by increasing surface area for cooling. Required for components handling significant power.",
-    "analogy": "A cooling fin that pulls heat away from hot components.",
-    "unit": "SSD 105 - ICs",
-    "tags": "ICs|thermal_management|safety"
+    "term": "Transistor Safety and ESD",
+    "definition": "Transistors can be damaged by electrostatic discharge (ESD). Use grounding wrist strap when handling. Never apply excessive voltage to base terminal. Never exceed maximum current ratings. Check datasheet before installation.",
+    "analogy": "Handle like any sensitive electronic component - with proper ESD protection.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|safety|ESD"
   }
   ];
 
