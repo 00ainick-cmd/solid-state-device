@@ -90,7 +90,7 @@
         <svg class="sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M12 2l1.9 4.6L18 8l-4.1 1.4L12 14l-1.9-4.6L6 8l4.1-1.4L12 2z"/>
         </svg>
-        AEA Interactive Glossary
+        Solid State Devices - Interactive Glossary
       </h1>
       <div class="deck-switch" id="deckSwitch">
         <button class="chip active" data-deck="all">All</button>
@@ -146,216 +146,344 @@
 (function(){
   // ---------- Data (embedded directly – no document.write) ----------
   const FIXED_CARDS = [
-  
-  {
-    "term": "Voltage (V)",
-    "definition": "The electrical pressure or potential difference that causes electrons to flow, often symbolized as E (electromotive force) or V, and is measured in Volts (V) [4-6]. In aircraft, standard DC voltages are typically 14V or 28V [3, 4, 7, 8].",
-    "analogy": "The height of a waterfall or the water pressure in a hose [4-6, 9].",
-    "unit": "Volt (V)",
-    "tags": "DC 101|fundamentals|measurement"
-  },
-  {
-    "term": "Current (I)",
-    "definition": "The flow rate of electrons (electrical charge) through a conductor, measured in Amperes (A) [7, 9-11]. Controlling current is essential for safe avionics operation [12].",
-    "analogy": "The flow rate or amount of water moving through a pipe or hose [9, 10, 13].",
-    "unit": "Ampere (A)",
-    "tags": "DC 101|fundamentals|measurement"
-  },
-  {
-    "term": "Resistance (R)",
-    "definition": "The opposition or 'friction' to electron flow through a material, measured in Ohms ($\\Omega$) [9, 13-15]. Resistance is used to control current and protect sensitive avionics components [12, 16].",
-    "analogy": "Rocks in a riverbed that impede water flow, or the diameter of a hose (smaller hose = higher resistance) [9, 13, 14].",
-    "unit": "Ohm ($\\Omega$)",
-    "tags": "DC 101|fundamentals|measurement"
-  },
-  {
-    "term": "Ohm’s Law (V=I×R)",
-    "definition": "The fundamental mathematical relationship describing voltage, current, and resistance: Voltage equals Current multiplied by Resistance (V = I × R) [2, 10, 12, 17, 18]. This is the most important tool for troubleshooting electrical issues [12, 19].",
-    "analogy": "The backbone of every electrical problem solved in a small aircraft [19].",
-    "unit": "DC 102 (Formula)",
-    "tags": "formula|troubleshooting"
-  },
-  {
-    "term": "Ohm’s Law Triangle",
-    "definition": "A visual memory aid used by technicians where V is placed at the top, and I and R are at the base; covering the desired variable reveals the correct formula [20, 21].",
-    "analogy": "A fast, foolproof method to recall the three core electrical relationships [20].",
-    "unit": "DC 102 (Tool)",
-    "tags": "formula|tool"
-  },
-  {
-    "term": "Ohm's Law (Current Formula)",
-    "definition": "A derived formula stating that Current equals Voltage divided by Resistance (I = V $\\div$ R) [10, 17, 22]. This is used to calculate the electrical load to select proper circuit protection [23].",
-    "analogy": "Finding the flow rate when you know the pressure and the size of the restriction [17].",
-    "unit": "DC 102 (Formula)",
-    "tags": "formula|troubleshooting"
-  },
-  {
-    "term": "Ohm's Law (Resistance Formula)",
-    "definition": "A derived formula stating that Resistance equals Voltage divided by Current (R = V $\\div$ I) [14, 17, 22]. This is used to determine the resistance of components like light bulbs or heating elements [14, 20].",
-    "analogy": "Finding the size of the obstruction when you know the pressure and the flow rate [17].",
-    "unit": "DC 102 (Formula)",
-    "tags": "formula|troubleshooting"
-  },
-  {
-    "term": "Electrical Power (P)",
-    "definition": "The rate of doing work or consuming energy in a circuit, calculated primarily using P = V $\\times$ I [24-27]. Power calculations are critical for proper wire sizing and circuit breaker selection [2, 25, 28, 29].",
-    "analogy": "The volume or amount of work being produced, or the energy consumed by a device [24, 30, 31].",
-    "unit": "Watt (W)",
-    "tags": "DC 102|calculations|safety"
-  },
-  {
-    "term": "Watt's Law (Derived)",
-    "definition": "Alternative formulas derived from Ohm's Law and Power, such as P = I² $\\times$ R and P = V² $\\div$ R, useful when current or voltage measurements are difficult to obtain [25, 26, 32, 33].",
-    "analogy": "Alternative routes to calculate the work being done if you can't measure all the basic variables [32].",
-    "unit": "DC 102 (Formula)",
-    "tags": "formula|calculations"
-  },
-  {
-    "term": "Conductor",
-    "definition": "Materials, typically metals like copper or aluminum, that allow electricity to flow easily because they have many free valence electrons and low resistance [14, 15, 34, 35].",
-    "analogy": "A clear, wide highway for the smooth flow of electrical current [34].",
-    "unit": "DC 101 (Material)",
-    "tags": "fundamentals|materials"
-  },
-  {
-    "term": "Insulator",
-    "definition": "Materials, such as rubber or plastic, that block or highly resist the flow of electricity, used in avionics for wire jackets and safety barriers [14, 34, 36].",
-    "analogy": "A physical barrier or safety fence confining the electrical current to its intended path [34, 37].",
-    "unit": "DC 101 (Material)",
-    "tags": "fundamentals|materials"
-  },
+
+  // === SEMICONDUCTOR FUNDAMENTALS ===
   {
     "term": "Semiconductor",
-    "definition": "Materials, like silicon, with electrical properties between conductors and insulators, used in modern solid-state electronics like transistors and diodes where conductivity can be controlled [14, 34, 37, 38].",
-    "analogy": "The basis of all modern electronic components that can act as a controlled switch [34].",
-    "unit": "DC 101 (Material)",
-    "tags": "fundamentals|materials|devices"
+    "definition": "A material with electrical conductivity between a conductor and insulator. Silicon (Si) and germanium (Ge) are the most common semiconductors. Their conductivity can be precisely controlled through doping, making them ideal for solid state devices in avionics.",
+    "analogy": "A gate that can be opened or closed to control electron flow.",
+    "unit": "SSD 101",
+    "tags": "fundamentals|materials|semiconductor_theory"
   },
   {
-    "term": "Electron",
-    "definition": "Tiny negatively charged particles orbiting the atom's nucleus [39, 40]. The directed movement of valence electrons from atom to atom creates electrical current [41, 42].",
-    "analogy": "The moving charge carriers that make up electricity [41].",
-    "unit": "DC 101 (Physics)",
-    "tags": "atomic_theory"
+    "term": "P-type Semiconductor",
+    "definition": "A semiconductor doped with acceptor atoms (like boron) that create holes (positive charge carriers). When boron is added to silicon, it creates a deficit of electrons, resulting in positive charge carriers that can conduct current.",
+    "analogy": "Creating spaces where electrons want to jump into.",
+    "unit": "SSD 101",
+    "tags": "fundamentals|doping|semiconductor_theory"
   },
   {
-    "term": "Proton",
-    "definition": "Positively charged particle located within the nucleus of an atom [39, 40]. Protons contribute to the mass and stability of the atom [42].",
-    "analogy": "A fundamental positive charge at the core of matter [39].",
-    "unit": "DC 101 (Physics)",
-    "tags": "atomic_theory"
+    "term": "N-type Semiconductor",
+    "definition": "A semiconductor doped with donor atoms (like phosphorus) that provide extra free electrons (negative charge carriers). The extra electrons make the material more conductive and negative.",
+    "analogy": "Adding extra electrons like adding extra workers to a production line.",
+    "unit": "SSD 101",
+    "tags": "fundamentals|doping|semiconductor_theory"
   },
   {
-    "term": "Series Circuit",
-    "definition": "A configuration where components are connected end-to-end in a single, unbroken path [2, 43-46]. The same current flows through all components [43, 44, 46-48].",
-    "analogy": "A single chain of components; one failure stops the entire circuit [43, 46, 49].",
-    "unit": "DC 103 (Circuit Type)",
-    "tags": "circuit_type"
+    "term": "PN Junction",
+    "definition": "The boundary between P-type and N-type semiconductor materials. At this junction, electrons and holes recombine, creating a depletion region that acts as a barrier. This is the fundamental building block of diodes and transistors.",
+    "analogy": "A one-way valve that controls electron flow.",
+    "unit": "SSD 101",
+    "tags": "fundamentals|diodes|semiconductor_theory"
+  },
+
+  // === DIODES ===
+  {
+    "term": "Diode",
+    "definition": "A two-terminal semiconductor device with a PN junction that allows current to flow in only one direction (forward bias) and blocks it in the opposite direction (reverse bias). Critical for rectification, protection, and signal processing in avionics.",
+    "analogy": "An electrical one-way street or check valve for current.",
+    "unit": "SSD 102 - Diodes",
+    "tags": "diodes|components|fundamentals"
   },
   {
-    "term": "Parallel Circuit",
-    "definition": "A configuration where components are connected across common voltage points, offering multiple independent current paths [2, 50-53]. The voltage is the same across all branches [53-56].",
-    "analogy": "Modern household wiring or aircraft distribution where turning off one device doesn't affect others [54, 57, 58].",
-    "unit": "DC 103 (Circuit Type)",
-    "tags": "circuit_type"
+    "term": "Anode",
+    "definition": "The positive terminal of a diode, connected to the P-type material. Current flows into the diode through the anode when forward biased.",
+    "analogy": "The entry point for conventional current flow.",
+    "unit": "SSD 102 - Diodes",
+    "tags": "diodes|terminals"
   },
   {
-    "term": "Complex Circuit",
-    "definition": "A combination of both series and parallel elements, common in avionics installations where safety and independent operation are required [2, 53-55].",
-    "analogy": "Wiring the power wire on multiple components in parallel, which then runs in series to a circuit breaker [54].",
-    "unit": "DC 103 (Circuit Type)",
-    "tags": "circuit_type"
+    "term": "Cathode",
+    "definition": "The negative terminal of a diode, connected to the N-type material. Usually marked with a band on the physical component. Current exits through the cathode.",
+    "analogy": "The exit point for conventional current, marked for identification.",
+    "unit": "SSD 102 - Diodes",
+    "tags": "diodes|terminals"
   },
   {
-    "term": "Kirchhoff's Voltage Law (KVL)",
-    "definition": "States that the sum of all voltage drops around any closed loop in a circuit must equal the total supply voltage (or sum to zero) [2, 43, 59-61]. Essential for ensuring components receive correct voltage [62].",
-    "analogy": "The source voltage must be entirely consumed by the components in the loop [63].",
-    "unit": "DC 103 (Law)",
-    "tags": "law|series|troubleshooting"
+    "term": "Forward Bias",
+    "definition": "Condition where the anode is positive relative to the cathode, allowing current to flow through the diode. Typical forward voltage drop is 0.7V for silicon diodes, 0.3V for germanium diodes.",
+    "analogy": "Opening the gate to allow traffic through.",
+    "unit": "SSD 102 - Diodes",
+    "tags": "diodes|operation"
   },
   {
-    "term": "Kirchhoff's Current Law (KCL)",
-    "definition": "States that the total current entering a junction must equal the total current leaving the junction [2, 54, 64-66]. This ensures current is properly distributed across all parallel branches [67].",
-    "analogy": "A rule ensuring no current is lost or created at a junction point where wires meet [67].",
-    "unit": "DC 103 (Law)",
-    "tags": "law|parallel|troubleshooting"
+    "term": "Reverse Bias",
+    "definition": "Condition where the cathode is positive relative to the anode, blocking current flow through the diode. The depletion region widens, preventing conduction until breakdown voltage is reached.",
+    "analogy": "Closing the gate to block traffic.",
+    "unit": "SSD 102 - Diodes",
+    "tags": "diodes|operation"
   },
   {
-    "term": "Series Resistance Formula",
-    "definition": "Total resistance in a series circuit is the sum of all individual resistances: R_total = R₁ + R₂ + R₃ + ... [43, 49, 51, 68]. Adding components increases the total resistance [49, 68].",
-    "analogy": "Total friction is the sum of every rough spot the current encounters in its single path [68].",
-    "unit": "DC 103 (Formula)",
-    "tags": "formula|series"
+    "term": "Forward Voltage Drop (Vf)",
+    "definition": "The voltage across a diode when conducting in forward bias, typically 0.7V for silicon and 0.3V for germanium. This must be considered in circuit design for proper voltage calculations.",
+    "analogy": "The admission price to pass through the gate.",
+    "unit": "SSD 102 - Diodes",
+    "tags": "diodes|specifications|measurement"
   },
   {
-    "term": "Parallel Resistance Formula",
-    "definition": "Total resistance is the reciprocal of the sum of the individual reciprocals: 1/R_total = 1/R₁ + 1/R₂ + ... [54, 55, 69, 70]. The total resistance is always less than the smallest individual resistor [54, 69, 71].",
-    "analogy": "Adding multiple paths makes it easier for the current to flow, reducing the overall resistance [69].",
-    "unit": "DC 103 (Formula)",
-    "tags": "formula|parallel"
+    "term": "Peak Inverse Voltage (PIV)",
+    "definition": "The maximum reverse voltage a diode can withstand without breaking down. Exceeding PIV can permanently damage the diode. Critical specification for power supply and protection circuits.",
+    "analogy": "The maximum backward pressure before the gate breaks.",
+    "unit": "SSD 102 - Diodes",
+    "tags": "diodes|specifications|safety"
   },
   {
-    "term": "Open Circuit",
-    "definition": "A fault caused by a break or disconnection in the current path, resulting in infinite resistance (O.L.) and zero current flow (0 Amps) [2, 72-74].",
-    "analogy": "A dammed river or a broken wire; the current stops completely [72, 75].",
-    "unit": "DC 103 (Fault)",
-    "tags": "fault|troubleshooting"
+    "term": "Rectifier Diode",
+    "definition": "A diode designed to convert AC to DC by allowing current flow in only one direction. Used extensively in aircraft power supplies to convert AC generator output to DC for avionics equipment.",
+    "analogy": "A one-way converter changing alternating flow to direct flow.",
+    "unit": "SSD 102 - Diodes",
+    "tags": "diodes|applications|power_supplies"
   },
   {
-    "term": "Short Circuit",
-    "definition": "A dangerous fault where current takes an unintended low-resistance path, causing excessive current flow that can trip circuit protection or cause fires [2, 73, 76, 77].",
-    "analogy": "Electrons taking the least resistive path, such as through a carelessly dropped metal wrench across battery terminals [76].",
-    "unit": "DC 103 (Fault)",
-    "tags": "fault|safety"
+    "term": "Light Emitting Diode (LED)",
+    "definition": "A diode that emits light when forward biased as electrons recombine with holes. Used for indicators, displays, and lighting in modern aircraft panels. More efficient and longer-lasting than incandescent bulbs.",
+    "analogy": "An electrical component that glows when current flows through it.",
+    "unit": "SSD 102 - Diodes",
+    "tags": "diodes|applications|indicators"
   },
   {
-    "term": "Voltage Drop",
-    "definition": "The reduction in voltage across a component in a circuit as energy is consumed, calculated using Ohm's Law (V = I $\\times$ R) [2, 47, 63]. High-resistance connections (corrosion) cause unwanted voltage drops [28, 78].",
-    "analogy": "The amount of pressure lost as water passes through a small pipe or filter [6, 62].",
-    "unit": "DC 103 (Concept)",
-    "tags": "troubleshooting"
+    "term": "Diode Testing with Multimeter",
+    "definition": "Use diode test mode or resistance mode with power OFF. Forward bias should show 0.5-0.8V (or low resistance ~500-1000Ω), reverse bias should show O.L. (open circuit). Both directions showing low resistance indicates a shorted diode.",
+    "analogy": "Checking if the one-way valve works properly in both directions.",
+    "unit": "SSD 102 - Diodes",
+    "tags": "diodes|testing|troubleshooting"
+  },
+
+  // === ZENER DIODES ===
+  {
+    "term": "Zener Diode",
+    "definition": "A special diode designed to operate in reverse breakdown at a specific voltage (Zener voltage). Used for voltage regulation and protection in avionics circuits. Unlike regular diodes, Zener diodes are designed to safely conduct in reverse.",
+    "analogy": "A pressure relief valve that opens at a specific pressure.",
+    "unit": "SSD 103 - Zener Diodes",
+    "tags": "zener|voltage_regulation|components"
   },
   {
-    "term": "Multimeter",
-    "definition": "A handheld test instrument essential for avionics technicians used to measure fundamental electrical quantities: voltage, current, and resistance [2, 59, 79].",
-    "analogy": "The primary diagnostic tool, allowing technicians to interpret electrical system health [59, 80].",
-    "unit": "DC 103 (Tool)",
-    "tags": "tool|measurement"
+    "term": "Zener Voltage (Vz)",
+    "definition": "The specific reverse breakdown voltage at which a Zener diode begins to conduct. Available in standard values from 2.4V to 200V. This voltage remains nearly constant despite changes in current.",
+    "analogy": "The exact pressure at which the relief valve opens.",
+    "unit": "SSD 103 - Zener Diodes",
+    "tags": "zener|specifications"
   },
   {
-    "term": "Measuring Voltage (Procedure)",
-    "definition": "Voltage is measured by connecting the multimeter probes *across* (in parallel with) the component or circuit being tested [2, 6, 7, 51]. This must be done while the circuit is powered ON [81].",
-    "analogy": "Measuring the pressure difference between the inlet and outlet of a device [7].",
-    "unit": "DC 103 (Procedure)",
-    "tags": "multimeter|procedure"
+    "term": "Zener Diode Operation",
+    "definition": "Zener diodes are connected in reverse bias (cathode to positive). When voltage reaches Vz, the diode conducts and clamps the voltage to Vz. A series resistor limits current to prevent damage.",
+    "analogy": "A controlled overflow valve that maintains constant pressure.",
+    "unit": "SSD 103 - Zener Diodes",
+    "tags": "zener|operation"
   },
   {
-    "term": "Measuring Current (Procedure)",
-    "definition": "Current is measured by inserting the multimeter *into* (in series with) the circuit, physically breaking the current path so the flow runs through the meter [2, 13, 51, 82, 83]. This must be done carefully to avoid blowing fuses [2, 84].",
-    "analogy": "Cutting a pipe and routing the entire water flow through a flow meter [83, 84].",
-    "unit": "DC 103 (Procedure)",
-    "tags": "multimeter|procedure"
+    "term": "Voltage Regulator Circuit",
+    "definition": "A circuit using a Zener diode to maintain constant output voltage despite variations in input voltage or load current. Essential for protecting sensitive avionics from voltage spikes and fluctuations.",
+    "analogy": "A governor that keeps output steady despite input changes.",
+    "unit": "SSD 103 - Zener Diodes",
+    "tags": "zener|applications|voltage_regulation"
   },
   {
-    "term": "Measuring Resistance (Procedure)",
-    "definition": "Resistance is measured by connecting the multimeter probes across the component, but the circuit power must be completely OFF to prevent damage to the meter and ensure accurate results [17, 51, 85].",
-    "analogy": "Checking the impedance of a wire or component when it is completely isolated [85].",
-    "unit": "DC 103 (Procedure)",
-    "tags": "multimeter|procedure"
+    "term": "Zener Power Rating",
+    "definition": "The maximum power (watts) a Zener diode can dissipate, calculated as P = Vz × Iz. Exceeding this rating will overheat and destroy the diode. Must be considered when sizing the series resistor.",
+    "analogy": "The maximum heat the component can handle before failing.",
+    "unit": "SSD 103 - Zener Diodes",
+    "tags": "zener|specifications|safety"
+  },
+
+  // === TRANSISTORS ===
+  {
+    "term": "Transistor",
+    "definition": "A three-terminal semiconductor device that can amplify current or act as an electronic switch. The two main types are Bipolar Junction Transistor (BJT) and Field Effect Transistor (FET). Fundamental building block of all modern avionics.",
+    "analogy": "An electronic valve or relay controlled by a small signal.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|fundamentals|components"
   },
   {
-    "term": "Electrostatic Discharge (ESD)",
-    "definition": "The rapid transfer of static electrical charge built up on an object [2, 86]. This poses a serious hazard as it can damage sensitive avionics components like microprocessors [2, 76, 87].",
-    "analogy": "The invisible static shock that can 'fry' delicate circuits [88].",
-    "unit": "DC 101 (Safety)",
-    "tags": "safety|maintenance"
+    "term": "Bipolar Junction Transistor (BJT)",
+    "definition": "A three-layer semiconductor device (NPN or PNP) with three terminals: base, collector, and emitter. A small base current controls a larger collector-emitter current. Used for amplification and switching.",
+    "analogy": "A water faucet where a small turn controls large flow.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|BJT|fundamentals"
   },
   {
-    "term": "ESD Precautions",
-    "definition": "Safety procedures, such as using grounding straps and anti-static mats, designed to safely discharge built-up static electricity before handling sensitive electronics [2, 89].",
-    "analogy": "Grounding oneself to prevent static discharge from destroying microprocessors [89, 90].",
-    "unit": "DC 101 (Safety)",
-    "tags": "safety|maintenance"
+    "term": "NPN Transistor",
+    "definition": "A BJT with N-type emitter and collector separated by a thin P-type base. Turns ON when base is positive relative to emitter. Conventional current flows from collector to emitter. Most common type in avionics.",
+    "analogy": "A normally-off switch activated by positive signal.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|BJT|NPN"
+  },
+  {
+    "term": "PNP Transistor",
+    "definition": "A BJT with P-type emitter and collector separated by a thin N-type base. Turns ON when base is negative relative to emitter. Current flows from emitter to collector. Complementary to NPN.",
+    "analogy": "A normally-off switch activated by negative signal.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|BJT|PNP"
+  },
+  {
+    "term": "Base (B)",
+    "definition": "The control terminal of a BJT. A small base current (typically μA to mA) controls the much larger collector current. The thin middle layer of the transistor structure.",
+    "analogy": "The control knob that regulates the flow.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|BJT|terminals"
+  },
+  {
+    "term": "Collector (C)",
+    "definition": "The terminal where main current enters an NPN transistor (or exits a PNP). Connected to the more heavily doped region. Typically connected to the power supply through a load resistor.",
+    "analogy": "The main inlet for the controlled flow.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|BJT|terminals"
+  },
+  {
+    "term": "Emitter (E)",
+    "definition": "The terminal where main current exits an NPN transistor (or enters a PNP). The reference point for transistor biasing. Usually connected to ground in NPN circuits.",
+    "analogy": "The main outlet for the controlled flow.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|BJT|terminals"
+  },
+  {
+    "term": "Beta (β) or hFE",
+    "definition": "The current gain of a transistor, the ratio of collector current to base current: β = Ic/Ib. Typical values range from 50 to 300. Used to calculate base current needed for desired collector current.",
+    "analogy": "The amplification factor - how much the small control signal is multiplied.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|BJT|specifications"
+  },
+  {
+    "term": "Transistor Saturation",
+    "definition": "The ON state where maximum collector current flows and collector-emitter voltage (Vce) is minimum (typically 0.2V). Used when transistor operates as a switch. Both junctions are forward biased.",
+    "analogy": "Fully open valve with maximum flow.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|BJT|operation"
+  },
+  {
+    "term": "Transistor Cutoff",
+    "definition": "The OFF state where base current is zero, collector current is zero (except tiny leakage), and Vce equals supply voltage. Used for switching applications. Both junctions are reverse biased.",
+    "analogy": "Fully closed valve with no flow.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|BJT|operation"
+  },
+  {
+    "term": "Transistor as Switch",
+    "definition": "Using a transistor to switch loads ON/OFF by driving it between saturation (ON) and cutoff (OFF). Common in digital circuits, relay drivers, and LED drivers in avionics. More efficient than using as amplifier.",
+    "analogy": "An electronic relay controlled by low-power signal.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|applications|switching"
+  },
+  {
+    "term": "Transistor as Amplifier",
+    "definition": "Using a transistor in its active region to increase signal strength. Small changes in base current cause large changes in collector current. Used in audio, RF, and sensor circuits.",
+    "analogy": "A megaphone that makes quiet signals loud.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|applications|amplification"
+  },
+  {
+    "term": "Field Effect Transistor (FET)",
+    "definition": "A voltage-controlled transistor with three terminals: gate, drain, and source. Unlike BJT which is current-controlled, FET is controlled by gate voltage. Very high input impedance, used extensively in modern avionics.",
+    "analogy": "A valve controlled by electric field instead of current.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|FET|fundamentals"
+  },
+  {
+    "term": "MOSFET",
+    "definition": "Metal-Oxide-Semiconductor FET. Most common type of FET, with extremely high input impedance. Used in digital circuits, power control, and integrated circuits. Gate is insulated from channel by oxide layer.",
+    "analogy": "A super-efficient switch with virtually no control power needed.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|FET|MOSFET"
+  },
+  {
+    "term": "Transistor Testing",
+    "definition": "Use diode test mode with power OFF. For NPN: base-emitter and base-collector should show ~0.6V forward, reverse shows O.L. For PNP: reverse these readings. Collector-emitter shows O.L. both ways if good.",
+    "analogy": "Testing if the control valve operates correctly.",
+    "unit": "SSD 104 - Transistors",
+    "tags": "transistors|testing|troubleshooting"
+  },
+
+  // === INTEGRATED CIRCUITS (ICs) ===
+  {
+    "term": "Integrated Circuit (IC)",
+    "definition": "A miniaturized electronic circuit consisting of thousands to billions of transistors, diodes, resistors, and capacitors on a single semiconductor chip. The foundation of modern avionics computers, autopilots, and digital systems.",
+    "analogy": "An entire electronic factory on a silicon chip.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|fundamentals|components"
+  },
+  {
+    "term": "Digital IC",
+    "definition": "ICs that process discrete (on/off) signals using binary logic (0s and 1s). Includes logic gates, microprocessors, memory chips, and digital controllers. Used in flight computers and digital displays.",
+    "analogy": "Electronic circuits that speak in yes/no, on/off language.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|digital|applications"
+  },
+  {
+    "term": "Analog IC",
+    "definition": "ICs that process continuous signals like voltage, current, temperature, or pressure. Includes operational amplifiers (op-amps), voltage regulators, and sensor interfaces. Critical for sensor processing in avionics.",
+    "analogy": "Electronic circuits that handle smooth, continuous signals.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|analog|applications"
+  },
+  {
+    "term": "Operational Amplifier (Op-Amp)",
+    "definition": "A high-gain analog IC with differential inputs and single output. Used for signal amplification, filtering, and mathematical operations. Standard building block in sensor interfaces and signal conditioning.",
+    "analogy": "A precision amplifier that can be configured for many tasks.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|analog|op-amp"
+  },
+  {
+    "term": "Logic Gate",
+    "definition": "Basic digital IC building block that performs Boolean operations (AND, OR, NOT, NAND, NOR, XOR). Multiple gates combine to create complex digital systems like processors and controllers.",
+    "analogy": "Electronic decision maker with specific rules.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|digital|logic"
+  },
+  {
+    "term": "Microcontroller",
+    "definition": "A complete computer on a single IC chip, including processor, memory, and I/O peripherals. Used extensively in avionics for engine management, flight controls, and system monitoring. Examples: Arduino, PIC, ARM Cortex.",
+    "analogy": "A tiny computer brain on a chip.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|digital|microcontrollers"
+  },
+  {
+    "term": "Voltage Regulator IC",
+    "definition": "An IC designed to maintain constant output voltage despite input variations. Common types: 7805 (+5V), 7812 (+12V), LM317 (adjustable). Essential for providing stable power to sensitive avionics circuits.",
+    "analogy": "An automatic voltage stabilizer on a chip.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|analog|power_regulation"
+  },
+  {
+    "term": "IC Package Types",
+    "definition": "Physical formats for ICs: DIP (Dual Inline Package) for through-hole, SMD (Surface Mount Device) for compact boards, QFP (Quad Flat Pack), BGA (Ball Grid Array). Package type affects replacement and testing procedures.",
+    "analogy": "Different container styles for the same electronic contents.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|packaging"
+  },
+  {
+    "term": "IC Pin Numbering",
+    "definition": "Standardized numbering system: Pin 1 marked with dot or notch, numbers increase counter-clockwise from top view. Critical for proper installation and troubleshooting. Incorrect installation can destroy the IC.",
+    "analogy": "The addressing system for IC connections.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|identification|safety"
+  },
+  {
+    "term": "IC Power Pins",
+    "definition": "Vcc/Vdd (positive supply) and GND/Vss (ground) pins that power the IC. Must be connected correctly or IC will not function and may be damaged. Typically Vcc is highest pin number and GND is middle pin on DIP packages.",
+    "analogy": "The power inlet and outlet for the chip.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|power|safety"
+  },
+  {
+    "term": "Static Sensitive Devices",
+    "definition": "ICs (especially CMOS and MOSFET-based) that can be damaged by electrostatic discharge (ESD). Require anti-static handling: wrist straps, grounded mats, anti-static bags. Even small static shocks can destroy these devices.",
+    "analogy": "Delicate components that need special protective handling.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|safety|ESD"
+  },
+  {
+    "term": "IC Troubleshooting",
+    "definition": "Check power supply voltages first, verify proper pin connections, test with known-good IC if available, check for physical damage or overheating. Many ICs cannot be tested in-circuit and require replacement for diagnosis.",
+    "analogy": "Systematic detective work to find the failing component.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|troubleshooting|testing"
+  },
+  {
+    "term": "Heat Sink",
+    "definition": "Metal device attached to power transistors and voltage regulator ICs to dissipate heat. Prevents thermal failure by increasing surface area for cooling. Required for components handling significant power.",
+    "analogy": "A cooling fin that pulls heat away from hot components.",
+    "unit": "SSD 105 - ICs",
+    "tags": "ICs|thermal_management|safety"
   }
   ];
 

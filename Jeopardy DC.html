@@ -575,65 +575,65 @@
 const QUESTION_BANK = {
   // ==================== ROUND 1: JEOPARDY ====================
 
-  "DC Concepts": [
+  "Semiconductor Fundamentals": [
     {
-      id: "dc-001",
+      id: "sem-001",
       difficulty: 1,
       pointValue: 100,
       timeLimit: 10,
-      question: "This is the unit of measurement for electrical 'pressure' or potential difference.",
-      answers: ["Amperes (Amps)", "Ohms (Ω)", "Volts (V)", "Watts (W)"],
-      correctIndex: 2,
-      explanation: "Voltage (Volts) is the electrical pressure that causes current to flow.",
-      reference: "Fundamentals of DC"
+      question: "This material has electrical conductivity between a conductor and an insulator.",
+      answers: ["Conductor", "Semiconductor", "Insulator", "Resistor"],
+      correctIndex: 1,
+      explanation: "Semiconductors like silicon and germanium have properties between conductors and insulators, making them ideal for solid state devices.",
+      reference: "Semiconductor Fundamentals"
     },
     {
-      id: "dc-002",
+      id: "sem-002",
       difficulty: 2,
       pointValue: 200,
       timeLimit: 12,
-      question: "This is the unit of measurement for the rate of electron flow in a circuit.",
-      answers: ["Amperes (Amps)", "Ohms (Ω)", "Volts (V)", "Watts (W)"],
-      correctIndex: 0,
-      explanation: "Current (Amperes) is the measure of how many electrons flow past a point per second.",
-      reference: "Fundamentals of DC"
+      question: "The two most common semiconductor materials used in avionics are:",
+      answers: ["Copper and Aluminum", "Silicon and Germanium", "Carbon and Nitrogen", "Gold and Silver"],
+      correctIndex: 1,
+      explanation: "Silicon (Si) is most widely used, with Germanium (Ge) also common in certain applications.",
+      reference: "Semiconductor Materials"
     },
     {
-      id: "dc-003",
+      id: "sem-003",
       difficulty: 3,
       pointValue: 300,
       timeLimit: 14,
-      question: "A material, like rubber or plastic, that strongly opposes the flow of current is called:",
-      answers: ["A conductor", "A semiconductor", "A resistor", "An insulator"],
-      correctIndex: 3,
-      explanation: "Insulators have very high resistance and are used to prevent current from flowing where it is not wanted.",
-      reference: "Conductors vs. Insulators"
+      question: "A semiconductor doped with boron, creating positive charge carriers (holes), is called:",
+      answers: ["N-type", "P-type", "PN-type", "Neutral-type"],
+      correctIndex: 1,
+      explanation: "P-type semiconductors have acceptor atoms that create holes (positive charge carriers).",
+      reference: "Doping"
     },
     {
-      id: "dc-004",
+      id: "sem-004",
       difficulty: 3,
       pointValue: 400,
       timeLimit: 15,
-      question: "This is the unit of measurement for the opposition to current flow.",
-      answers: ["Amperes (Amps)", "Ohms (Ω)", "Volts (V)", "Watts (W)"],
-      correctIndex: 1,
-      explanation: "Resistance (Ohms) is the property that opposes the flow of current.",
-      reference: "Fundamentals of DC"
+      question: "The boundary between P-type and N-type materials where a depletion region forms is called:",
+      answers: ["A semiconductor", "A diode junction", "A PN junction", "A transistor"],
+      correctIndex: 2,
+      explanation: "The PN junction is the fundamental building block of all semiconductor devices including diodes and transistors.",
+      reference: "PN Junction"
     },
     {
-      id: "dc-005",
+      id: "sem-005",
       difficulty: 4,
       pointValue: 500,
       timeLimit: 18,
-      question: "In 'Direct Current' (DC), the electrons flow in:",
-      answers: ["Two directions, alternating", "One direction only", "A circular, spinning pattern", "High-frequency pulses"],
+      question: "Adding impurity atoms to pure semiconductor material to control conductivity is called:",
+      answers: ["Insulation", "Doping", "Grounding", "Shielding"],
       correctIndex: 1,
-      explanation: "Direct Current (DC) is defined by its unidirectional flow, typically from negative to positive.",
-      reference: "AC vs. DC"
+      explanation: "Doping allows precise control of semiconductor electrical properties by adding specific impurities.",
+      reference: "Doping Process"
     }
   ],
 
-  "Ohm's Law": [
+  "Diodes": [
     {
       id: "ohm-001",
       difficulty: 1,
