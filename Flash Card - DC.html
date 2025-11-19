@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> CAET Flash Cards – Standalone </title>
+  <title>Solid State Devices Flash Cards</title>
   <style>
     :root{
       --bg: #f8fafc; /* slate-50 */
@@ -90,7 +90,7 @@
         <svg class="sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M12 2l1.9 4.6L18 8l-4.1 1.4L12 14l-1.9-4.6L6 8l4.1-1.4L12 2z"/>
         </svg>
-        AEA Interactive Glossary
+        Solid State Devices Glossary
       </h1>
       <div class="deck-switch" id="deckSwitch">
         <button class="chip active" data-deck="all">All</button>
@@ -146,216 +146,419 @@
 (function(){
   // ---------- Data (embedded directly – no document.write) ----------
   const FIXED_CARDS = [
-  
-  {
-    "term": "Voltage (V)",
-    "definition": "The electrical pressure or potential difference that causes electrons to flow, often symbolized as E (electromotive force) or V, and is measured in Volts (V) [4-6]. In aircraft, standard DC voltages are typically 14V or 28V [3, 4, 7, 8].",
-    "analogy": "The height of a waterfall or the water pressure in a hose [4-6, 9].",
-    "unit": "Volt (V)",
-    "tags": "DC 101|fundamentals|measurement"
-  },
-  {
-    "term": "Current (I)",
-    "definition": "The flow rate of electrons (electrical charge) through a conductor, measured in Amperes (A) [7, 9-11]. Controlling current is essential for safe avionics operation [12].",
-    "analogy": "The flow rate or amount of water moving through a pipe or hose [9, 10, 13].",
-    "unit": "Ampere (A)",
-    "tags": "DC 101|fundamentals|measurement"
-  },
-  {
-    "term": "Resistance (R)",
-    "definition": "The opposition or 'friction' to electron flow through a material, measured in Ohms ($\\Omega$) [9, 13-15]. Resistance is used to control current and protect sensitive avionics components [12, 16].",
-    "analogy": "Rocks in a riverbed that impede water flow, or the diameter of a hose (smaller hose = higher resistance) [9, 13, 14].",
-    "unit": "Ohm ($\\Omega$)",
-    "tags": "DC 101|fundamentals|measurement"
-  },
-  {
-    "term": "Ohm’s Law (V=I×R)",
-    "definition": "The fundamental mathematical relationship describing voltage, current, and resistance: Voltage equals Current multiplied by Resistance (V = I × R) [2, 10, 12, 17, 18]. This is the most important tool for troubleshooting electrical issues [12, 19].",
-    "analogy": "The backbone of every electrical problem solved in a small aircraft [19].",
-    "unit": "DC 102 (Formula)",
-    "tags": "formula|troubleshooting"
-  },
-  {
-    "term": "Ohm’s Law Triangle",
-    "definition": "A visual memory aid used by technicians where V is placed at the top, and I and R are at the base; covering the desired variable reveals the correct formula [20, 21].",
-    "analogy": "A fast, foolproof method to recall the three core electrical relationships [20].",
-    "unit": "DC 102 (Tool)",
-    "tags": "formula|tool"
-  },
-  {
-    "term": "Ohm's Law (Current Formula)",
-    "definition": "A derived formula stating that Current equals Voltage divided by Resistance (I = V $\\div$ R) [10, 17, 22]. This is used to calculate the electrical load to select proper circuit protection [23].",
-    "analogy": "Finding the flow rate when you know the pressure and the size of the restriction [17].",
-    "unit": "DC 102 (Formula)",
-    "tags": "formula|troubleshooting"
-  },
-  {
-    "term": "Ohm's Law (Resistance Formula)",
-    "definition": "A derived formula stating that Resistance equals Voltage divided by Current (R = V $\\div$ I) [14, 17, 22]. This is used to determine the resistance of components like light bulbs or heating elements [14, 20].",
-    "analogy": "Finding the size of the obstruction when you know the pressure and the flow rate [17].",
-    "unit": "DC 102 (Formula)",
-    "tags": "formula|troubleshooting"
-  },
-  {
-    "term": "Electrical Power (P)",
-    "definition": "The rate of doing work or consuming energy in a circuit, calculated primarily using P = V $\\times$ I [24-27]. Power calculations are critical for proper wire sizing and circuit breaker selection [2, 25, 28, 29].",
-    "analogy": "The volume or amount of work being produced, or the energy consumed by a device [24, 30, 31].",
-    "unit": "Watt (W)",
-    "tags": "DC 102|calculations|safety"
-  },
-  {
-    "term": "Watt's Law (Derived)",
-    "definition": "Alternative formulas derived from Ohm's Law and Power, such as P = I² $\\times$ R and P = V² $\\div$ R, useful when current or voltage measurements are difficult to obtain [25, 26, 32, 33].",
-    "analogy": "Alternative routes to calculate the work being done if you can't measure all the basic variables [32].",
-    "unit": "DC 102 (Formula)",
-    "tags": "formula|calculations"
-  },
-  {
-    "term": "Conductor",
-    "definition": "Materials, typically metals like copper or aluminum, that allow electricity to flow easily because they have many free valence electrons and low resistance [14, 15, 34, 35].",
-    "analogy": "A clear, wide highway for the smooth flow of electrical current [34].",
-    "unit": "DC 101 (Material)",
-    "tags": "fundamentals|materials"
-  },
-  {
-    "term": "Insulator",
-    "definition": "Materials, such as rubber or plastic, that block or highly resist the flow of electricity, used in avionics for wire jackets and safety barriers [14, 34, 36].",
-    "analogy": "A physical barrier or safety fence confining the electrical current to its intended path [34, 37].",
-    "unit": "DC 101 (Material)",
-    "tags": "fundamentals|materials"
-  },
+
   {
     "term": "Semiconductor",
-    "definition": "Materials, like silicon, with electrical properties between conductors and insulators, used in modern solid-state electronics like transistors and diodes where conductivity can be controlled [14, 34, 37, 38].",
-    "analogy": "The basis of all modern electronic components that can act as a controlled switch [34].",
-    "unit": "DC 101 (Material)",
-    "tags": "fundamentals|materials|devices"
+    "definition": "A material with electrical conductivity between that of a conductor and an insulator. Silicon and germanium are the most common semiconductors used in electronic devices. Their conductivity can be controlled by adding impurities (doping).",
+    "analogy": "A partially open gate that can be adjusted to control how much traffic flows through.",
+    "unit": "Fundamentals",
+    "tags": "fundamentals|materials"
   },
   {
-    "term": "Electron",
-    "definition": "Tiny negatively charged particles orbiting the atom's nucleus [39, 40]. The directed movement of valence electrons from atom to atom creates electrical current [41, 42].",
-    "analogy": "The moving charge carriers that make up electricity [41].",
-    "unit": "DC 101 (Physics)",
-    "tags": "atomic_theory"
+    "term": "Silicon (Si)",
+    "definition": "The most widely used semiconductor material with 4 valence electrons. It forms a crystalline structure and has a bandgap of 1.1 eV. Silicon is abundant, inexpensive, and forms a stable oxide layer, making it ideal for integrated circuits.",
+    "analogy": "The 'bread and butter' of the semiconductor industry.",
+    "unit": "Fundamentals",
+    "tags": "fundamentals|materials"
   },
   {
-    "term": "Proton",
-    "definition": "Positively charged particle located within the nucleus of an atom [39, 40]. Protons contribute to the mass and stability of the atom [42].",
-    "analogy": "A fundamental positive charge at the core of matter [39].",
-    "unit": "DC 101 (Physics)",
-    "tags": "atomic_theory"
+    "term": "Germanium (Ge)",
+    "definition": "A semiconductor material with 4 valence electrons and a smaller bandgap (0.67 eV) than silicon. It was used in early transistors but has largely been replaced by silicon due to higher leakage current and thermal instability.",
+    "analogy": "The 'grandfather' of semiconductor materials.",
+    "unit": "Fundamentals",
+    "tags": "fundamentals|materials"
   },
   {
-    "term": "Series Circuit",
-    "definition": "A configuration where components are connected end-to-end in a single, unbroken path [2, 43-46]. The same current flows through all components [43, 44, 46-48].",
-    "analogy": "A single chain of components; one failure stops the entire circuit [43, 46, 49].",
-    "unit": "DC 103 (Circuit Type)",
-    "tags": "circuit_type"
+    "term": "Doping",
+    "definition": "The process of intentionally adding impurity atoms to pure semiconductor material to change its electrical properties. Doping creates either excess electrons (N-type) or excess holes (P-type).",
+    "analogy": "Adding a small amount of seasoning to change the flavor of a dish.",
+    "unit": "Fundamentals",
+    "tags": "fundamentals|doping"
   },
   {
-    "term": "Parallel Circuit",
-    "definition": "A configuration where components are connected across common voltage points, offering multiple independent current paths [2, 50-53]. The voltage is the same across all branches [53-56].",
-    "analogy": "Modern household wiring or aircraft distribution where turning off one device doesn't affect others [54, 57, 58].",
-    "unit": "DC 103 (Circuit Type)",
-    "tags": "circuit_type"
+    "term": "N-Type Semiconductor",
+    "definition": "A semiconductor doped with pentavalent impurities (phosphorus, arsenic, antimony) that have 5 valence electrons. The extra electron becomes a free charge carrier. Electrons are the majority carriers; holes are minority carriers.",
+    "analogy": "A material with extra free electrons ready to conduct current.",
+    "unit": "Fundamentals",
+    "tags": "fundamentals|doping"
   },
   {
-    "term": "Complex Circuit",
-    "definition": "A combination of both series and parallel elements, common in avionics installations where safety and independent operation are required [2, 53-55].",
-    "analogy": "Wiring the power wire on multiple components in parallel, which then runs in series to a circuit breaker [54].",
-    "unit": "DC 103 (Circuit Type)",
-    "tags": "circuit_type"
+    "term": "P-Type Semiconductor",
+    "definition": "A semiconductor doped with trivalent impurities (boron, gallium, indium) that have 3 valence electrons. This creates 'holes' or missing electrons. Holes are the majority carriers; electrons are minority carriers.",
+    "analogy": "A material with empty seats (holes) that electrons can fill.",
+    "unit": "Fundamentals",
+    "tags": "fundamentals|doping"
   },
   {
-    "term": "Kirchhoff's Voltage Law (KVL)",
-    "definition": "States that the sum of all voltage drops around any closed loop in a circuit must equal the total supply voltage (or sum to zero) [2, 43, 59-61]. Essential for ensuring components receive correct voltage [62].",
-    "analogy": "The source voltage must be entirely consumed by the components in the loop [63].",
-    "unit": "DC 103 (Law)",
-    "tags": "law|series|troubleshooting"
+    "term": "Valence Electrons",
+    "definition": "Electrons in the outermost shell of an atom that participate in chemical bonding and electrical conduction. Semiconductors have 4 valence electrons, allowing them to form covalent bonds with neighboring atoms.",
+    "analogy": "The 'hands' of an atom that reach out to bond with neighbors.",
+    "unit": "Fundamentals",
+    "tags": "fundamentals|atomic_theory"
   },
   {
-    "term": "Kirchhoff's Current Law (KCL)",
-    "definition": "States that the total current entering a junction must equal the total current leaving the junction [2, 54, 64-66]. This ensures current is properly distributed across all parallel branches [67].",
-    "analogy": "A rule ensuring no current is lost or created at a junction point where wires meet [67].",
-    "unit": "DC 103 (Law)",
-    "tags": "law|parallel|troubleshooting"
+    "term": "Covalent Bond",
+    "definition": "A chemical bond where atoms share valence electrons. In a semiconductor crystal, each atom shares its 4 valence electrons with 4 neighboring atoms, creating a stable crystalline structure.",
+    "analogy": "Atoms holding hands in a circle, sharing their electrons.",
+    "unit": "Fundamentals",
+    "tags": "fundamentals|atomic_theory"
   },
   {
-    "term": "Series Resistance Formula",
-    "definition": "Total resistance in a series circuit is the sum of all individual resistances: R_total = R₁ + R₂ + R₃ + ... [43, 49, 51, 68]. Adding components increases the total resistance [49, 68].",
-    "analogy": "Total friction is the sum of every rough spot the current encounters in its single path [68].",
-    "unit": "DC 103 (Formula)",
-    "tags": "formula|series"
+    "term": "Hole",
+    "definition": "A vacancy left by a missing electron in a semiconductor crystal that acts as a positive charge carrier. Holes move through the material as electrons jump from atom to atom to fill the vacancy.",
+    "analogy": "An empty seat in a theater that appears to move as people shift to fill it.",
+    "unit": "Fundamentals",
+    "tags": "fundamentals|carriers"
   },
   {
-    "term": "Parallel Resistance Formula",
-    "definition": "Total resistance is the reciprocal of the sum of the individual reciprocals: 1/R_total = 1/R₁ + 1/R₂ + ... [54, 55, 69, 70]. The total resistance is always less than the smallest individual resistor [54, 69, 71].",
-    "analogy": "Adding multiple paths makes it easier for the current to flow, reducing the overall resistance [69].",
-    "unit": "DC 103 (Formula)",
-    "tags": "formula|parallel"
+    "term": "PN Junction",
+    "definition": "The boundary formed when P-type and N-type semiconductor materials are joined together. This junction is the basis for diodes, transistors, and most semiconductor devices. A depletion region forms at the junction.",
+    "analogy": "The border between two countries where different rules apply.",
+    "unit": "Junctions",
+    "tags": "junctions|diodes"
   },
   {
-    "term": "Open Circuit",
-    "definition": "A fault caused by a break or disconnection in the current path, resulting in infinite resistance (O.L.) and zero current flow (0 Amps) [2, 72-74].",
-    "analogy": "A dammed river or a broken wire; the current stops completely [72, 75].",
-    "unit": "DC 103 (Fault)",
-    "tags": "fault|troubleshooting"
+    "term": "Depletion Region",
+    "definition": "The area at a PN junction where mobile charge carriers (electrons and holes) have diffused across and recombined, leaving behind immobile ionized atoms. This region acts as an insulating barrier with no free carriers.",
+    "analogy": "A no-man's land between two territories where no one lives.",
+    "unit": "Junctions",
+    "tags": "junctions|diodes"
   },
   {
-    "term": "Short Circuit",
-    "definition": "A dangerous fault where current takes an unintended low-resistance path, causing excessive current flow that can trip circuit protection or cause fires [2, 73, 76, 77].",
-    "analogy": "Electrons taking the least resistive path, such as through a carelessly dropped metal wrench across battery terminals [76].",
-    "unit": "DC 103 (Fault)",
-    "tags": "fault|safety"
+    "term": "Barrier Potential",
+    "definition": "The voltage that exists across the depletion region of a PN junction due to the electric field created by uncovered ions. For silicon, it's approximately 0.7V; for germanium, approximately 0.3V.",
+    "analogy": "A hill that electrons must climb to cross the junction.",
+    "unit": "Junctions",
+    "tags": "junctions|diodes"
   },
   {
-    "term": "Voltage Drop",
-    "definition": "The reduction in voltage across a component in a circuit as energy is consumed, calculated using Ohm's Law (V = I $\\times$ R) [2, 47, 63]. High-resistance connections (corrosion) cause unwanted voltage drops [28, 78].",
-    "analogy": "The amount of pressure lost as water passes through a small pipe or filter [6, 62].",
-    "unit": "DC 103 (Concept)",
-    "tags": "troubleshooting"
+    "term": "Forward Bias",
+    "definition": "A condition where the positive terminal of a voltage source is connected to the P-type material and negative to the N-type. This reduces the depletion region and allows current to flow through the junction.",
+    "analogy": "Opening a gate to allow traffic to flow through.",
+    "unit": "Junctions",
+    "tags": "junctions|diodes|biasing"
   },
   {
-    "term": "Multimeter",
-    "definition": "A handheld test instrument essential for avionics technicians used to measure fundamental electrical quantities: voltage, current, and resistance [2, 59, 79].",
-    "analogy": "The primary diagnostic tool, allowing technicians to interpret electrical system health [59, 80].",
-    "unit": "DC 103 (Tool)",
-    "tags": "tool|measurement"
+    "term": "Reverse Bias",
+    "definition": "A condition where the positive terminal of a voltage source is connected to the N-type material and negative to the P-type. This widens the depletion region and blocks current flow (except for small leakage current).",
+    "analogy": "Closing a gate to stop traffic flow.",
+    "unit": "Junctions",
+    "tags": "junctions|diodes|biasing"
   },
   {
-    "term": "Measuring Voltage (Procedure)",
-    "definition": "Voltage is measured by connecting the multimeter probes *across* (in parallel with) the component or circuit being tested [2, 6, 7, 51]. This must be done while the circuit is powered ON [81].",
-    "analogy": "Measuring the pressure difference between the inlet and outlet of a device [7].",
-    "unit": "DC 103 (Procedure)",
-    "tags": "multimeter|procedure"
+    "term": "Diode",
+    "definition": "A two-terminal semiconductor device that allows current to flow in only one direction. It consists of a single PN junction. The anode connects to P-type material; the cathode connects to N-type material.",
+    "analogy": "A one-way valve that allows flow in only one direction.",
+    "unit": "Diodes",
+    "tags": "diodes|devices"
   },
   {
-    "term": "Measuring Current (Procedure)",
-    "definition": "Current is measured by inserting the multimeter *into* (in series with) the circuit, physically breaking the current path so the flow runs through the meter [2, 13, 51, 82, 83]. This must be done carefully to avoid blowing fuses [2, 84].",
-    "analogy": "Cutting a pipe and routing the entire water flow through a flow meter [83, 84].",
-    "unit": "DC 103 (Procedure)",
-    "tags": "multimeter|procedure"
+    "term": "Rectifier Diode",
+    "definition": "A diode designed to convert AC to DC by allowing current flow in only one direction. Used in power supplies to produce DC voltage from AC mains. Can be configured as half-wave or full-wave rectifiers.",
+    "analogy": "A turnstile that only allows people to pass in one direction.",
+    "unit": "Diodes",
+    "tags": "diodes|applications"
   },
   {
-    "term": "Measuring Resistance (Procedure)",
-    "definition": "Resistance is measured by connecting the multimeter probes across the component, but the circuit power must be completely OFF to prevent damage to the meter and ensure accurate results [17, 51, 85].",
-    "analogy": "Checking the impedance of a wire or component when it is completely isolated [85].",
-    "unit": "DC 103 (Procedure)",
-    "tags": "multimeter|procedure"
+    "term": "Zener Diode",
+    "definition": "A special diode designed to operate in reverse breakdown (Zener breakdown) at a specific voltage. Used for voltage regulation as it maintains a constant voltage across its terminals regardless of current variations.",
+    "analogy": "A pressure relief valve that opens at a specific pressure to maintain constant pressure.",
+    "unit": "Diodes",
+    "tags": "diodes|regulation"
   },
   {
-    "term": "Electrostatic Discharge (ESD)",
-    "definition": "The rapid transfer of static electrical charge built up on an object [2, 86]. This poses a serious hazard as it can damage sensitive avionics components like microprocessors [2, 76, 87].",
-    "analogy": "The invisible static shock that can 'fry' delicate circuits [88].",
-    "unit": "DC 101 (Safety)",
-    "tags": "safety|maintenance"
+    "term": "Zener Breakdown",
+    "definition": "The phenomenon where a heavily doped PN junction conducts in reverse bias at a specific voltage due to quantum tunneling of electrons across the junction. Occurs at voltages below 5V.",
+    "analogy": "Electrons tunneling through a barrier when the electric field is strong enough.",
+    "unit": "Diodes",
+    "tags": "diodes|breakdown"
   },
   {
-    "term": "ESD Precautions",
-    "definition": "Safety procedures, such as using grounding straps and anti-static mats, designed to safely discharge built-up static electricity before handling sensitive electronics [2, 89].",
-    "analogy": "Grounding oneself to prevent static discharge from destroying microprocessors [89, 90].",
-    "unit": "DC 101 (Safety)",
-    "tags": "safety|maintenance"
+    "term": "Avalanche Breakdown",
+    "definition": "A breakdown mechanism in reverse-biased diodes where high-energy carriers collide with atoms, creating electron-hole pairs in a chain reaction. Occurs at higher voltages (above 5V) than Zener breakdown.",
+    "analogy": "A snowball rolling downhill, getting bigger as it picks up more snow.",
+    "unit": "Diodes",
+    "tags": "diodes|breakdown"
+  },
+  {
+    "term": "Light Emitting Diode (LED)",
+    "definition": "A diode that emits light when forward biased. Electrons recombining with holes release energy as photons. The color depends on the semiconductor material and bandgap energy. Highly efficient for lighting and indicators.",
+    "analogy": "A diode that converts electrical energy directly into light.",
+    "unit": "Diodes",
+    "tags": "diodes|optoelectronics"
+  },
+  {
+    "term": "Photodiode",
+    "definition": "A diode that converts light into electrical current. When photons strike the depletion region, they create electron-hole pairs that generate current. Operates in reverse bias for faster response.",
+    "analogy": "A solar cell that generates current when exposed to light.",
+    "unit": "Diodes",
+    "tags": "diodes|optoelectronics"
+  },
+  {
+    "term": "Schottky Diode",
+    "definition": "A diode formed by a metal-semiconductor junction instead of a PN junction. Has a lower forward voltage drop (0.2-0.3V) and faster switching speed than standard diodes. Used in high-frequency and power applications.",
+    "analogy": "A faster, more efficient one-way valve with less resistance.",
+    "unit": "Diodes",
+    "tags": "diodes|high-speed"
+  },
+  {
+    "term": "Varactor Diode",
+    "definition": "A diode designed to act as a voltage-controlled capacitor. The capacitance varies with the reverse bias voltage as the depletion region width changes. Used in tuning circuits and frequency modulation.",
+    "analogy": "A variable capacitor controlled by voltage instead of mechanical adjustment.",
+    "unit": "Diodes",
+    "tags": "diodes|tuning"
+  },
+  {
+    "term": "Bipolar Junction Transistor (BJT)",
+    "definition": "A three-terminal semiconductor device with two PN junctions (NPN or PNP). Current flowing into the base controls a larger current between collector and emitter. Used for amplification and switching.",
+    "analogy": "A water faucet where a small turn of the handle controls a large flow of water.",
+    "unit": "Transistors",
+    "tags": "transistors|BJT"
+  },
+  {
+    "term": "NPN Transistor",
+    "definition": "A BJT with a thin P-type base between two N-type regions (emitter and collector). Current flows from collector to emitter when base-emitter junction is forward biased. The arrow on the emitter points outward.",
+    "analogy": "Electrons flow from emitter to collector, controlled by base current.",
+    "unit": "Transistors",
+    "tags": "transistors|BJT"
+  },
+  {
+    "term": "PNP Transistor",
+    "definition": "A BJT with a thin N-type base between two P-type regions (emitter and collector). Current flows from emitter to collector when base-emitter junction is forward biased. The arrow on the emitter points inward.",
+    "analogy": "Holes flow from emitter to collector, controlled by base current.",
+    "unit": "Transistors",
+    "tags": "transistors|BJT"
+  },
+  {
+    "term": "Current Gain (Beta/hFE)",
+    "definition": "The ratio of collector current to base current in a BJT (IC/IB). Typical values range from 50 to 300. A small base current controls a much larger collector current, providing amplification.",
+    "analogy": "The multiplication factor showing how much the transistor amplifies current.",
+    "unit": "Transistors",
+    "tags": "transistors|parameters"
+  },
+  {
+    "term": "Saturation (BJT)",
+    "definition": "The operating region where both junctions of a BJT are forward biased and collector current is maximum. The transistor acts like a closed switch with minimal voltage drop (VCE(sat) ≈ 0.2V).",
+    "analogy": "A fully open faucet that cannot pass any more water.",
+    "unit": "Transistors",
+    "tags": "transistors|operation"
+  },
+  {
+    "term": "Cutoff (BJT)",
+    "definition": "The operating region where both junctions of a BJT are reverse biased and no collector current flows (except leakage). The transistor acts like an open switch.",
+    "analogy": "A completely closed faucet with no water flowing.",
+    "unit": "Transistors",
+    "tags": "transistors|operation"
+  },
+  {
+    "term": "Active Region (BJT)",
+    "definition": "The operating region where the base-emitter junction is forward biased and the base-collector junction is reverse biased. The transistor operates as a linear amplifier in this region.",
+    "analogy": "A faucet partially open, where small adjustments change the flow proportionally.",
+    "unit": "Transistors",
+    "tags": "transistors|operation"
+  },
+  {
+    "term": "Field Effect Transistor (FET)",
+    "definition": "A three-terminal semiconductor device where current flow is controlled by an electric field. Voltage on the gate controls current between source and drain. High input impedance makes it ideal for voltage amplification.",
+    "analogy": "A voltage-controlled valve where no current flows into the control terminal.",
+    "unit": "Transistors",
+    "tags": "transistors|FET"
+  },
+  {
+    "term": "MOSFET",
+    "definition": "Metal-Oxide-Semiconductor Field Effect Transistor. The gate is insulated from the channel by a thin oxide layer, providing extremely high input impedance. Available in enhancement and depletion modes, N-channel and P-channel types.",
+    "analogy": "The workhorse of modern digital electronics and power switching.",
+    "unit": "Transistors",
+    "tags": "transistors|FET|MOSFET"
+  },
+  {
+    "term": "Enhancement Mode MOSFET",
+    "definition": "A MOSFET that is normally OFF with zero gate voltage. Applying a gate-source voltage above the threshold creates a conductive channel. Most common type in digital circuits.",
+    "analogy": "A normally closed gate that opens when voltage is applied.",
+    "unit": "Transistors",
+    "tags": "transistors|MOSFET"
+  },
+  {
+    "term": "Depletion Mode MOSFET",
+    "definition": "A MOSFET that is normally ON with zero gate voltage. Applying a negative gate-source voltage depletes the channel and reduces current flow. Less common than enhancement mode.",
+    "analogy": "A normally open gate that closes when voltage is applied.",
+    "unit": "Transistors",
+    "tags": "transistors|MOSFET"
+  },
+  {
+    "term": "Threshold Voltage (Vth)",
+    "definition": "The minimum gate-source voltage required to create a conductive channel in an enhancement mode MOSFET. Below this voltage, the transistor is OFF. Typical values range from 1V to 5V.",
+    "analogy": "The minimum push needed to open a spring-loaded door.",
+    "unit": "Transistors",
+    "tags": "transistors|parameters"
+  },
+  {
+    "term": "Silicon Controlled Rectifier (SCR)",
+    "definition": "A four-layer (PNPN) thyristor device with three terminals: anode, cathode, and gate. Once triggered by a gate pulse, it conducts until current falls below holding current. Used for power control.",
+    "analogy": "A latching switch that stays on once triggered until power is removed.",
+    "unit": "Thyristors",
+    "tags": "thyristors|power"
+  },
+  {
+    "term": "TRIAC",
+    "definition": "A bidirectional thyristor that can conduct current in both directions when triggered. Equivalent to two SCRs connected in inverse parallel. Used for AC power control like dimmers and motor speed control.",
+    "analogy": "A two-way latching switch for AC circuits.",
+    "unit": "Thyristors",
+    "tags": "thyristors|power"
+  },
+  {
+    "term": "DIAC",
+    "definition": "A bidirectional trigger diode that conducts when voltage exceeds its breakover voltage in either direction. Used to trigger TRIACs and SCRs. Has no gate terminal.",
+    "analogy": "A pressure-activated valve that opens at a certain pressure in either direction.",
+    "unit": "Thyristors",
+    "tags": "thyristors|triggering"
+  },
+  {
+    "term": "Integrated Circuit (IC)",
+    "definition": "A miniaturized electronic circuit manufactured on a semiconductor substrate containing transistors, diodes, resistors, and capacitors. Enables complex functionality in a small package. Foundation of modern electronics.",
+    "analogy": "An entire city of electronic components built on a tiny chip of silicon.",
+    "unit": "ICs",
+    "tags": "integrated_circuits"
+  },
+  {
+    "term": "Operational Amplifier (Op-Amp)",
+    "definition": "A high-gain DC-coupled amplifier IC with differential inputs and a single output. Ideal op-amp has infinite gain, infinite input impedance, and zero output impedance. Building block for analog circuits.",
+    "analogy": "A versatile building block that can be configured for many analog functions.",
+    "unit": "ICs",
+    "tags": "integrated_circuits|amplifiers"
+  },
+  {
+    "term": "Voltage Regulator IC",
+    "definition": "An integrated circuit designed to maintain a constant output voltage regardless of input voltage variations or load changes. Common types include 78xx series (positive) and 79xx series (negative).",
+    "analogy": "An automatic valve that maintains constant water pressure regardless of supply variations.",
+    "unit": "ICs",
+    "tags": "integrated_circuits|regulation"
+  },
+  {
+    "term": "Heat Sink",
+    "definition": "A passive cooling device that absorbs and dissipates heat from semiconductor devices. Increases the surface area for heat transfer to the surrounding air. Essential for power transistors and voltage regulators.",
+    "analogy": "A radiator that helps dissipate excess heat from hot components.",
+    "unit": "Thermal Management",
+    "tags": "thermal|safety"
+  },
+  {
+    "term": "Thermal Runaway",
+    "definition": "A dangerous condition where increasing temperature causes increased current flow, which further increases temperature in a positive feedback loop. Can destroy semiconductor devices. Proper biasing and heat sinking prevent this.",
+    "analogy": "A snowball effect where heat breeds more heat until the device fails.",
+    "unit": "Thermal Management",
+    "tags": "thermal|safety"
+  },
+  {
+    "term": "Maximum Power Dissipation",
+    "definition": "The maximum amount of power a semiconductor device can safely dissipate as heat without damage. Depends on the device's thermal resistance and ambient temperature. Must be derated at higher temperatures.",
+    "analogy": "The maximum heat load a device can handle before overheating.",
+    "unit": "Specifications",
+    "tags": "specifications|safety"
+  },
+  {
+    "term": "Peak Inverse Voltage (PIV)",
+    "definition": "The maximum reverse voltage a diode can withstand without breakdown. Also called Peak Reverse Voltage (PRV). Must be higher than the peak AC voltage in rectifier applications.",
+    "analogy": "The maximum backward pressure a one-way valve can handle without failing.",
+    "unit": "Specifications",
+    "tags": "specifications|diodes"
+  },
+  {
+    "term": "Forward Current Rating",
+    "definition": "The maximum continuous current a diode can conduct in forward bias without damage. Exceeding this rating causes excessive heating and potential failure. Typically specified as IF(max).",
+    "analogy": "The maximum flow rate a valve can handle continuously.",
+    "unit": "Specifications",
+    "tags": "specifications|diodes"
+  },
+  {
+    "term": "Half-Wave Rectifier",
+    "definition": "A circuit using a single diode to convert AC to pulsating DC by allowing current flow during only one half of the AC cycle. Simple but inefficient (only 40.6% efficiency). Output has high ripple.",
+    "analogy": "Using only the positive pushes of a swing to generate motion.",
+    "unit": "Applications",
+    "tags": "applications|rectifiers"
+  },
+  {
+    "term": "Full-Wave Rectifier",
+    "definition": "A circuit that converts both halves of the AC cycle to pulsating DC using either a center-tapped transformer with two diodes or a bridge configuration with four diodes. More efficient with lower ripple than half-wave.",
+    "analogy": "Using both the forward and backward swings to generate continuous motion.",
+    "unit": "Applications",
+    "tags": "applications|rectifiers"
+  },
+  {
+    "term": "Bridge Rectifier",
+    "definition": "A full-wave rectifier using four diodes arranged in a bridge configuration. Doesn't require a center-tapped transformer. Most common rectifier configuration in power supplies.",
+    "analogy": "Four one-way valves arranged so flow always goes the same direction regardless of input direction.",
+    "unit": "Applications",
+    "tags": "applications|rectifiers"
+  },
+  {
+    "term": "Ripple Voltage",
+    "definition": "The AC component remaining in the DC output of a rectifier. Caused by the pulsating nature of rectified AC. Reduced by filter capacitors. Expressed as a percentage or peak-to-peak voltage.",
+    "analogy": "The bumps in a road that should be smooth.",
+    "unit": "Applications",
+    "tags": "applications|filtering"
+  },
+  {
+    "term": "Filter Capacitor",
+    "definition": "A capacitor placed across the rectifier output to smooth the pulsating DC by storing charge during voltage peaks and releasing it during valleys. Larger capacitance means less ripple but higher inrush current.",
+    "analogy": "A water tank that smooths out the pulses from a pump.",
+    "unit": "Applications",
+    "tags": "applications|filtering"
+  },
+  {
+    "term": "Common-Emitter Configuration",
+    "definition": "A BJT amplifier configuration where the emitter is common to input and output. Provides high voltage and current gain with 180° phase inversion. Most commonly used amplifier configuration.",
+    "analogy": "The standard way to connect a transistor for maximum amplification.",
+    "unit": "Amplifiers",
+    "tags": "amplifiers|configurations"
+  },
+  {
+    "term": "Common-Collector Configuration",
+    "definition": "A BJT amplifier configuration where the collector is common to input and output. Also called emitter follower. Provides high current gain but voltage gain less than 1. Used for impedance matching.",
+    "analogy": "A buffer that provides current amplification without voltage gain.",
+    "unit": "Amplifiers",
+    "tags": "amplifiers|configurations"
+  },
+  {
+    "term": "Common-Base Configuration",
+    "definition": "A BJT amplifier configuration where the base is common to input and output. Provides high voltage gain but current gain less than 1. Has low input impedance and is used in high-frequency applications.",
+    "analogy": "A configuration optimized for high-frequency voltage amplification.",
+    "unit": "Amplifiers",
+    "tags": "amplifiers|configurations"
+  },
+  {
+    "term": "Biasing",
+    "definition": "The application of DC voltages to establish proper operating conditions for a transistor or other semiconductor device. Proper biasing ensures the device operates in the desired region (active, saturation, or cutoff).",
+    "analogy": "Setting the starting position of a control so it can move in either direction.",
+    "unit": "Biasing",
+    "tags": "biasing|operation"
+  },
+  {
+    "term": "Voltage Divider Bias",
+    "definition": "A stable BJT biasing method using two resistors to set the base voltage. Provides good stability against temperature variations and transistor parameter changes. Most common biasing method for amplifiers.",
+    "analogy": "Using a voltage divider to set a stable reference point for the transistor.",
+    "unit": "Biasing",
+    "tags": "biasing|stability"
+  },
+  {
+    "term": "Q-Point (Quiescent Point)",
+    "definition": "The DC operating point of a transistor when no AC signal is applied. Defined by IC (collector current) and VCE (collector-emitter voltage). Proper Q-point placement ensures maximum undistorted signal swing.",
+    "analogy": "The home position of a device before any signal makes it move.",
+    "unit": "Biasing",
+    "tags": "biasing|operation"
+  },
+  {
+    "term": "Clipping",
+    "definition": "A form of distortion where the peaks of a signal are cut off because the amplifier output exceeds its maximum or minimum limits. Caused by improper biasing or excessive input signal amplitude.",
+    "analogy": "Like trying to pour more water than a glass can hold - the excess is lost.",
+    "unit": "Distortion",
+    "tags": "distortion|troubleshooting"
+  },
+  {
+    "term": "Crossover Distortion",
+    "definition": "Distortion occurring in Class B push-pull amplifiers when the signal crosses zero. Caused by the 0.7V barrier potential of the transistors. Eliminated by using Class AB biasing.",
+    "analogy": "A gap in the handoff between two runners in a relay race.",
+    "unit": "Distortion",
+    "tags": "distortion|amplifiers"
   }
   ];
 

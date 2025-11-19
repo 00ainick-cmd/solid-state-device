@@ -422,7 +422,7 @@
 
 <div class="wrap">
   <div class="top">
-    <div class="badge">Electrical Systems Jeopardy — Player vs AI</div>
+    <div class="badge">Solid State Devices Jeopardy — Player vs AI</div>
     <div class="meta">
       <span class="round-indicator" id="roundIndicator">ROUND 1: JEOPARDY</span>
       <span>Tiles left: <span class="kpi" id="qLeft">15</span></span>
@@ -575,372 +575,372 @@
 const QUESTION_BANK = {
   // ==================== ROUND 1: JEOPARDY ====================
 
-  "DC Concepts": [
+  "Semiconductor Basics": [
     {
-      id: "dc-001",
+      id: "semi-001",
       difficulty: 1,
       pointValue: 100,
       timeLimit: 10,
-      question: "This is the unit of measurement for electrical 'pressure' or potential difference.",
-      answers: ["Amperes (Amps)", "Ohms (Ω)", "Volts (V)", "Watts (W)"],
-      correctIndex: 2,
-      explanation: "Voltage (Volts) is the electrical pressure that causes current to flow.",
-      reference: "Fundamentals of DC"
+      question: "This is the most commonly used semiconductor material in modern electronics.",
+      answers: ["Copper", "Silicon", "Aluminum", "Gold"],
+      correctIndex: 1,
+      explanation: "Silicon is abundant, inexpensive, and forms a stable oxide layer, making it ideal for integrated circuits.",
+      reference: "Semiconductor Materials"
     },
     {
-      id: "dc-002",
+      id: "semi-002",
       difficulty: 2,
       pointValue: 200,
       timeLimit: 12,
-      question: "This is the unit of measurement for the rate of electron flow in a circuit.",
-      answers: ["Amperes (Amps)", "Ohms (Ω)", "Volts (V)", "Watts (W)"],
-      correctIndex: 0,
-      explanation: "Current (Amperes) is the measure of how many electrons flow past a point per second.",
-      reference: "Fundamentals of DC"
+      question: "The process of adding impurities to pure semiconductor material to change its electrical properties is called:",
+      answers: ["Oxidation", "Doping", "Annealing", "Etching"],
+      correctIndex: 1,
+      explanation: "Doping introduces controlled amounts of impurity atoms to create N-type or P-type semiconductors.",
+      reference: "Semiconductor Doping"
     },
     {
-      id: "dc-003",
+      id: "semi-003",
       difficulty: 3,
       pointValue: 300,
       timeLimit: 14,
-      question: "A material, like rubber or plastic, that strongly opposes the flow of current is called:",
-      answers: ["A conductor", "A semiconductor", "A resistor", "An insulator"],
-      correctIndex: 3,
-      explanation: "Insulators have very high resistance and are used to prevent current from flowing where it is not wanted.",
-      reference: "Conductors vs. Insulators"
+      question: "In an N-type semiconductor, the majority charge carriers are:",
+      answers: ["Holes", "Protons", "Electrons", "Neutrons"],
+      correctIndex: 2,
+      explanation: "N-type semiconductors are doped with pentavalent atoms that provide extra electrons as majority carriers.",
+      reference: "N-Type Semiconductors"
     },
     {
-      id: "dc-004",
+      id: "semi-004",
       difficulty: 3,
       pointValue: 400,
       timeLimit: 15,
-      question: "This is the unit of measurement for the opposition to current flow.",
-      answers: ["Amperes (Amps)", "Ohms (Ω)", "Volts (V)", "Watts (W)"],
+      question: "A 'hole' in semiconductor theory refers to:",
+      answers: ["A physical defect in the crystal", "The absence of an electron that acts as a positive charge", "An extra proton in the nucleus", "A broken covalent bond"],
       correctIndex: 1,
-      explanation: "Resistance (Ohms) is the property that opposes the flow of current.",
-      reference: "Fundamentals of DC"
+      explanation: "A hole is a vacancy left by a missing electron that behaves as a positive charge carrier.",
+      reference: "Hole Theory"
     },
     {
-      id: "dc-005",
+      id: "semi-005",
       difficulty: 4,
       pointValue: 500,
       timeLimit: 18,
-      question: "In 'Direct Current' (DC), the electrons flow in:",
-      answers: ["Two directions, alternating", "One direction only", "A circular, spinning pattern", "High-frequency pulses"],
-      correctIndex: 1,
-      explanation: "Direct Current (DC) is defined by its unidirectional flow, typically from negative to positive.",
-      reference: "AC vs. DC"
+      question: "How many valence electrons does a pure silicon atom have?",
+      answers: ["2", "3", "4", "5"],
+      correctIndex: 2,
+      explanation: "Silicon has 4 valence electrons, which allows it to form covalent bonds with 4 neighboring atoms.",
+      reference: "Atomic Structure"
     }
   ],
 
-  "Ohm's Law": [
+  "Diode Fundamentals": [
     {
-      id: "ohm-001",
+      id: "diode-001",
       difficulty: 1,
       pointValue: 100,
       timeLimit: 10,
-      question: "What is the correct formula for Ohm's Law?",
-      answers: ["V = I x R", "R = V x I", "I = V x R", "P = V x I"],
-      correctIndex: 0,
-      explanation: "Ohm's Law states Voltage (V) equals Current (I) multiplied by Resistance (R).",
-      reference: "Ohm's Law Formula"
+      question: "A diode allows current to flow in:",
+      answers: ["Both directions equally", "One direction only", "Neither direction", "Alternating directions"],
+      correctIndex: 1,
+      explanation: "A diode is a one-way valve for current, allowing flow from anode to cathode when forward biased.",
+      reference: "Diode Operation"
     },
     {
-      id: "ohm-002",
+      id: "diode-002",
       difficulty: 2,
       pointValue: 200,
-      timeLimit: 15,
-      question: "A 10-ohm resistor has 2 amps of current flowing through it. What is the voltage drop across it?",
-      answers: ["5 Volts", "12 Volts", "0.2 Volts", "20 Volts"],
-      correctIndex: 3,
-      explanation: "Using V = I x R: 2 Amps * 10 Ohms = 20 Volts.",
-      reference: "Ohm's Law Calculation"
+      timeLimit: 12,
+      question: "The barrier potential (forward voltage drop) of a silicon diode is approximately:",
+      answers: ["0.3V", "0.7V", "1.4V", "2.0V"],
+      correctIndex: 1,
+      explanation: "Silicon diodes have a barrier potential of approximately 0.7V; germanium diodes are about 0.3V.",
+      reference: "Barrier Potential"
     },
     {
-      id: "ohm-003",
+      id: "diode-003",
       difficulty: 3,
       pointValue: 300,
-      timeLimit: 15,
-      question: "A 28-volt circuit has a resistance of 7 ohms. How much current is flowing?",
-      answers: ["4 Amps", "196 Amps", "21 Amps", "0.25 Amps"],
-      correctIndex: 0,
-      explanation: "Using I = V / R: 28 Volts / 7 Ohms = 4 Amps.",
-      reference: "Ohm's Law Calculation"
+      timeLimit: 14,
+      question: "The region at a PN junction where no free carriers exist is called the:",
+      answers: ["Conduction band", "Depletion region", "Valence band", "Forbidden zone"],
+      correctIndex: 1,
+      explanation: "The depletion region forms at the PN junction where electrons and holes have recombined.",
+      reference: "PN Junction"
     },
     {
-      id: "ohm-004",
+      id: "diode-004",
       difficulty: 3,
       pointValue: 400,
       timeLimit: 15,
-      question: "A lamp connected to a 14-volt source draws 2 amps. What is the lamp's resistance?",
-      answers: ["28 Ohms", "12 Ohms", "7 Ohms", "16 Ohms"],
+      question: "When a diode is forward biased:",
+      answers: ["The depletion region widens", "No current flows", "The depletion region narrows and current flows", "The diode is destroyed"],
       correctIndex: 2,
-      explanation: "Using R = V / I: 14 Volts / 2 Amps = 7 Ohms.",
-      reference: "Ohm's Law Calculation"
+      explanation: "Forward bias reduces the depletion region width, allowing majority carriers to cross the junction.",
+      reference: "Forward Bias"
     },
     {
-      id: "ohm-005",
+      id: "diode-005",
       difficulty: 4,
       pointValue: 500,
       timeLimit: 18,
-      question: "In a circuit with constant voltage, if you double the resistance, what happens to the current?",
-      answers: ["It doubles", "It stays the same", "It is cut in half", "It becomes zero"],
-      correctIndex: 2,
-      explanation: "Current and resistance are inversely proportional (I = V/R). If R doubles, I is halved.",
-      reference: "Ohm's Law Relationships"
+      question: "A Zener diode is specifically designed to operate in:",
+      answers: ["Forward bias only", "Reverse breakdown", "The active region", "Cutoff"],
+      correctIndex: 1,
+      explanation: "Zener diodes are designed to conduct in reverse breakdown at a specific voltage for voltage regulation.",
+      reference: "Zener Diodes"
     }
   ],
 
-  "The Power Law": [
+  "Diode Applications": [
     {
-      id: "pwr-001",
+      id: "app-001",
       difficulty: 1,
       pointValue: 100,
       timeLimit: 10,
-      question: "What is the basic formula for electrical power (Watt's Law)?",
-      answers: ["P = I x R", "P = V / I", "P = V x I", "P = V / R"],
-      correctIndex: 2,
-      explanation: "Power (P) in Watts equals Voltage (V) multiplied by Current (I).",
-      reference: "Power Law Formula"
+      question: "A rectifier circuit converts:",
+      answers: ["DC to AC", "AC to DC", "Low voltage to high voltage", "High frequency to low frequency"],
+      correctIndex: 1,
+      explanation: "Rectifiers use diodes to convert alternating current (AC) to direct current (DC).",
+      reference: "Rectification"
     },
     {
-      id: "pwr-002",
+      id: "app-002",
       difficulty: 2,
       pointValue: 200,
-      timeLimit: 15,
-      question: "A 28V circuit is drawing 10 amps. How much power is being consumed?",
-      answers: ["2.8 Watts", "280 Watts", "38 Watts", "0.35 Watts"],
-      correctIndex: 1,
-      explanation: "Using P = V x I: 28 Volts * 10 Amps = 280 Watts.",
-      reference: "Power Law Calculation"
+      timeLimit: 12,
+      question: "A half-wave rectifier uses how many diodes?",
+      answers: ["1", "2", "4", "6"],
+      correctIndex: 0,
+      explanation: "A half-wave rectifier uses a single diode to pass only one half of the AC cycle.",
+      reference: "Half-Wave Rectifier"
     },
     {
-      id: "pwr-003",
+      id: "app-003",
       difficulty: 3,
       pointValue: 300,
-      timeLimit: 15,
-      question: "What is the alternate formula for power when you only know current and resistance?",
-      answers: ["P = I² / R", "P = R² / I", "P = I x R²", "P = I² x R"],
-      correctIndex: 3,
-      explanation: "Since V = IR, substitute (IR) for V in P=VI, which gives P = (IR)I, or P = I²R.",
-      reference: "Power Law Formula"
+      timeLimit: 14,
+      question: "A bridge rectifier uses how many diodes?",
+      answers: ["1", "2", "4", "6"],
+      correctIndex: 2,
+      explanation: "A bridge rectifier uses 4 diodes arranged in a bridge configuration for full-wave rectification.",
+      reference: "Bridge Rectifier"
     },
     {
-      id: "pwr-004",
+      id: "app-004",
       difficulty: 3,
       pointValue: 400,
-      timeLimit: 18,
-      question: "A 100-ohm resistor has 2 amps flowing through it. How much power is it dissipating?",
-      answers: ["200 Watts", "50 Watts", "400 Watts", "0.02 Watts"],
-      correctIndex: 2,
-      explanation: "Using P = I² x R: (2 Amps * 2 Amps) * 100 Ohms = 400 Watts.",
-      reference: "Power Law Calculation"
+      timeLimit: 15,
+      question: "The AC component remaining in rectified DC output is called:",
+      answers: ["Harmonics", "Ripple", "Noise", "Transients"],
+      correctIndex: 1,
+      explanation: "Ripple voltage is the unwanted AC variation in DC output that is reduced by filter capacitors.",
+      reference: "Ripple Voltage"
     },
     {
-      id: "pwr-005",
+      id: "app-005",
       difficulty: 4,
       pointValue: 500,
       timeLimit: 18,
-      question: "What is the alternate formula for power when you only know voltage and resistance?",
-      answers: ["P = V² / R", "P = R² / V", "P = V x R²", "P = V² x R"],
-      correctIndex: 0,
-      explanation: "Since I = V/R, substitute (V/R) for I in P=VI, which gives P = V(V/R), or P = V²/R.",
-      reference: "Power Law Formula"
+      question: "An LED emits light when:",
+      answers: ["Reverse biased", "Forward biased", "In breakdown", "Unbiased"],
+      correctIndex: 1,
+      explanation: "LEDs emit light when forward biased as electrons recombine with holes and release photons.",
+      reference: "Light Emitting Diodes"
     }
   ],
 
   // ==================== ROUND 2: DOUBLE JEOPARDY ====================
 
-  "Series Circuits": [
+  "BJT Transistors": [
     {
-      id: "ser-201",
+      id: "bjt-201",
       difficulty: 2,
       pointValue: 200,
       timeLimit: 12,
-      question: "In a series circuit, the total resistance (Rt) is calculated by:",
-      answers: ["Averaging all resistors", "Using the smallest resistor value", "Adding all individual resistances", "Rt = (R1*R2)/(R1+R2)"],
+      question: "A BJT transistor has three terminals called:",
+      answers: ["Source, Gate, Drain", "Anode, Cathode, Gate", "Base, Emitter, Collector", "Input, Output, Ground"],
       correctIndex: 2,
-      explanation: "In a series circuit, resistances add up: Rt = R1 + R2 + R3 + ...",
-      reference: "Series Circuit Rules"
+      explanation: "BJT terminals are Base (control), Emitter (output), and Collector (input for conventional current).",
+      reference: "BJT Structure"
     },
     {
-      id: "ser-202",
+      id: "bjt-202",
       difficulty: 3,
       pointValue: 400,
       timeLimit: 14,
-      question: "What is the rule for current in a series circuit?",
-      answers: ["It is the same through all components", "It divides at each component", "It is highest at the last component", "It is zero at the end of the loop"],
-      correctIndex: 0,
-      explanation: "A series circuit has only one path, so the current (flow) must be the same everywhere.",
-      reference: "Series Circuit Rules"
+      question: "In an NPN transistor, current flows from collector to emitter when:",
+      answers: ["Base-emitter is reverse biased", "Base-emitter is forward biased", "Collector-base is forward biased", "No bias is applied"],
+      correctIndex: 1,
+      explanation: "Forward biasing the base-emitter junction allows base current to control collector current.",
+      reference: "NPN Operation"
     },
     {
-      id: "ser-203",
+      id: "bjt-203",
       difficulty: 4,
       pointValue: 600,
       timeLimit: 16,
-      question: "Three resistors are in series: 10 ohms, 20 ohms, and 30 ohms. What is the total resistance?",
-      answers: ["30 Ohms", "5.45 Ohms", "60 Ohms", "6000 Ohms"],
-      correctIndex: 2,
-      explanation: "Rt = R1 + R2 + R3. 10 + 20 + 30 = 60 Ohms.",
-      reference: "Series Circuit Calculation"
+      question: "The current gain (beta or hFE) of a transistor is the ratio of:",
+      answers: ["Emitter current to base current", "Collector current to base current", "Base current to collector current", "Collector current to emitter current"],
+      correctIndex: 1,
+      explanation: "Beta (β) = IC/IB, showing how much the transistor amplifies the base current.",
+      reference: "Current Gain"
     },
     {
-      id: "ser-204",
+      id: "bjt-204",
       difficulty: 4,
       pointValue: 800,
       timeLimit: 18,
-      question: "This law states that the sum of all voltage drops in a series loop equals the source voltage.",
-      answers: ["Ohm's Law", "Kirchhoff's Current Law (KCL)", "Watt's Law", "Kirchhoff's Voltage Law (KVL)"],
-      correctIndex: 3,
-      explanation: "Kirchhoff's Voltage Law (KVL) describes how voltage is distributed in a closed loop.",
-      reference: "Kirchhoff's Voltage Law"
+      question: "When a transistor operates as a switch in saturation, it acts like:",
+      answers: ["An open switch", "A closed switch", "A variable resistor", "A capacitor"],
+      correctIndex: 1,
+      explanation: "In saturation, both junctions are forward biased and VCE is minimal, acting like a closed switch.",
+      reference: "Saturation Region"
     },
     {
-      id: "ser-205",
+      id: "bjt-205",
       difficulty: 5,
       pointValue: 1000,
       timeLimit: 20,
-      question: "If one of three bulbs connected in series burns out (fails open), what happens to the other two?",
-      answers: ["They get brighter", "They get dimmer", "They both go out", "They are unaffected"],
-      correctIndex: 2,
-      explanation: "A burned-out bulb creates an open circuit, breaking the only path for current and stopping all flow.",
-      reference: "Series Circuit Troubleshooting"
+      question: "Which BJT amplifier configuration provides the highest voltage gain?",
+      answers: ["Common-emitter", "Common-collector", "Common-base", "Emitter-follower"],
+      correctIndex: 0,
+      explanation: "Common-emitter configuration provides both high voltage and current gain with phase inversion.",
+      reference: "Amplifier Configurations"
     }
   ],
 
-  "Parallel Circuits": [
+  "FETs & MOSFETs": [
     {
-      id: "par-201",
+      id: "fet-201",
       difficulty: 2,
       pointValue: 200,
       timeLimit: 12,
-      question: "What is the rule for voltage in a parallel circuit?",
-      answers: ["It is the same across all branches", "It divides equally among all branches", "It is zero across all branches", "It is highest at the first branch"],
-      correctIndex: 0,
-      explanation: "Components in parallel are connected across the same two points, so they must have the same voltage.",
-      reference: "Parallel Circuit Rules"
+      question: "A FET transistor has three terminals called:",
+      answers: ["Base, Emitter, Collector", "Source, Gate, Drain", "Anode, Cathode, Gate", "Primary, Secondary, Tertiary"],
+      correctIndex: 1,
+      explanation: "FET terminals are Source, Gate (control), and Drain.",
+      reference: "FET Structure"
     },
     {
-      id: "par-202",
+      id: "fet-202",
       difficulty: 3,
       pointValue: 400,
       timeLimit: 14,
-      question: "This law states that the total current entering a junction must equal the total current leaving it.",
-      answers: ["Ohm's Law", "Kirchhoff's Current Law (KCL)", "Watt's Law", "Kirchhoff's Voltage Law (KVL)"],
-      correctIndex: 1,
-      explanation: "Kirchhoff's Current Law (KCL) describes how current splits in parallel branches.",
-      reference: "Kirchhoff's Current Law"
+      question: "The main advantage of a FET over a BJT is:",
+      answers: ["Higher current gain", "Lower power consumption", "Higher input impedance", "Faster switching speed"],
+      correctIndex: 2,
+      explanation: "FETs are voltage-controlled devices with very high input impedance (virtually no gate current).",
+      reference: "FET Advantages"
     },
     {
-      id: "par-203",
+      id: "fet-203",
       difficulty: 4,
       pointValue: 600,
       timeLimit: 16,
-      question: "Two 10-ohm resistors are in parallel. What is their total resistance?",
-      answers: ["20 Ohms", "10 Ohms", "5 Ohms", "0 Ohms"],
-      correctIndex: 2,
-      explanation: "Using (R1*R2)/(R1+R2): (10*10)/(10+10) = 100/20 = 5 Ohms. Total R is always less than the smallest branch.",
-      reference: "Parallel Circuit Calculation"
+      question: "An enhancement-mode MOSFET is normally:",
+      answers: ["ON with zero gate voltage", "OFF with zero gate voltage", "Always conducting", "Always blocking"],
+      correctIndex: 1,
+      explanation: "Enhancement MOSFETs require gate voltage above threshold to create a conductive channel.",
+      reference: "Enhancement MOSFET"
     },
     {
-      id: "par-204",
+      id: "fet-204",
       difficulty: 4,
       pointValue: 800,
       timeLimit: 18,
-      question: "In a parallel circuit, total current (It) is calculated by:",
-      answers: ["Using the smallest branch current", "Averaging all branch currents", "Adding all individual branch currents", "It = I1 x I2 x I3..."],
+      question: "The minimum gate-source voltage needed to turn on an enhancement MOSFET is called:",
+      answers: ["Pinch-off voltage", "Breakdown voltage", "Threshold voltage", "Saturation voltage"],
       correctIndex: 2,
-      explanation: "Total current is the sum of the currents in each branch: It = I1 + I2 + I3 + ...",
-      reference: "Parallel Circuit Rules"
+      explanation: "Threshold voltage (Vth) is the minimum VGS required to create a conductive channel.",
+      reference: "Threshold Voltage"
     },
     {
-      id: "par-205",
+      id: "fet-205",
       difficulty: 5,
       pointValue: 1000,
       timeLimit: 20,
-      question: "If one of three bulbs connected in parallel burns out (fails open), what happens to the other two?",
-      answers: ["They get brighter", "They get dimmer", "They both go out", "They are unaffected"],
-      correctIndex: 3,
-      explanation: "Each parallel branch is independent. An open in one branch does not affect the others.",
-      reference: "Parallel Circuit Troubleshooting"
+      question: "MOSFETs are particularly susceptible to damage from:",
+      answers: ["High temperatures", "Electrostatic discharge (ESD)", "Low frequencies", "DC voltages"],
+      correctIndex: 1,
+      explanation: "The thin gate oxide in MOSFETs can be destroyed by ESD, requiring careful handling procedures.",
+      reference: "MOSFET Handling"
     }
   ],
 
-  "Multimeter & Troubleshooting": [
+  "Thyristors & ICs": [
     {
-      id: "mtr-201",
+      id: "thy-201",
       difficulty: 2,
       pointValue: 200,
       timeLimit: 12,
-      question: "To measure voltage (VDC), a multimeter must be connected:",
-      answers: ["In series with the circuit", "In parallel (across) the component", "With the circuit power OFF", "In the AMPS jack"],
-      correctIndex: 1,
-      explanation: "Voltage is a measurement of potential difference, so the meter must be placed in parallel (across) the points.",
-      reference: "Multimeter Usage"
+      question: "An SCR (Silicon Controlled Rectifier) has how many layers?",
+      answers: ["2", "3", "4", "5"],
+      correctIndex: 2,
+      explanation: "An SCR is a four-layer (PNPN) device with three terminals: anode, cathode, and gate.",
+      reference: "SCR Structure"
     },
     {
-      id: "mtr-202",
+      id: "thy-202",
       difficulty: 3,
       pointValue: 400,
       timeLimit: 14,
-      question: "To measure current (AMPS), a multimeter must be connected:",
-      answers: ["In series (in-line) with the circuit", "In parallel (across) the component", "With the circuit power OFF", "In the VOLTS jack"],
-      correctIndex: 0,
-      explanation: "Current is a measure of flow, so the circuit must be opened and the meter placed in series (in-line).",
-      reference: "Multimeter Usage"
+      question: "Once an SCR is triggered ON, it will turn OFF when:",
+      answers: ["The gate signal is removed", "Current falls below holding current", "Voltage is reversed", "Both B and C"],
+      correctIndex: 3,
+      explanation: "An SCR latches on after triggering and requires current to drop below holding current or reverse voltage to turn off.",
+      reference: "SCR Operation"
     },
     {
-      id: "mtr-203",
+      id: "thy-203",
       difficulty: 4,
       pointValue: 600,
       timeLimit: 16,
-      question: "What is the most critical safety step before measuring resistance (Ohms)?",
-      answers: ["Set the meter to the highest range", "Verify the meter's battery is good", "Ensure all circuit power is OFF", "Use alligator clips for safety"],
-      correctIndex: 2,
-      explanation: "An ohmmeter sends its own voltage. Measuring a powered circuit will, at minimum, destroy the meter.",
-      reference: "Multimeter Safety"
+      question: "A TRIAC differs from an SCR in that it can:",
+      answers: ["Handle higher voltages", "Conduct in both directions", "Switch faster", "Operate without a gate"],
+      correctIndex: 1,
+      explanation: "A TRIAC is bidirectional, conducting current in both directions when triggered.",
+      reference: "TRIAC Operation"
     },
     {
-      id: "mtr-204",
+      id: "thy-204",
       difficulty: 4,
       pointValue: 800,
       timeLimit: 18,
-      question: "A technician reads 'OL' or 'Infinity' on their ohmmeter when checking a wire. This indicates:",
-      answers: ["A 'short circuit' to ground", "A good, low-resistance wire", "An 'open circuit' or break", "The wire has high current"],
-      correctIndex: 2,
-      explanation: "'OL' (Over Limit) means the resistance is too high to measure, indicating a break (an open circuit).",
-      reference: "Troubleshooting Opens"
+      question: "The 7805 voltage regulator IC provides a fixed output of:",
+      answers: ["5V", "12V", "15V", "Variable"],
+      correctIndex: 0,
+      explanation: "The 78xx series provides positive fixed voltages; 7805 outputs 5V, 7812 outputs 12V, etc.",
+      reference: "Voltage Regulators"
     },
     {
-      id: "mtr-205",
+      id: "thy-205",
       difficulty: 5,
       pointValue: 1000,
       timeLimit: 20,
-      question: "A technician reads 0.2 Ohms when measuring from a wire to the aircraft airframe. This indicates:",
-      answers: ["A 'short circuit' to ground", "A good, isolated wire", "An 'open circuit' in the wire", "The wire's normal resistance"],
-      correctIndex: 0,
-      explanation: "A very low resistance path from a wire to ground (airframe) is the definition of a short circuit.",
-      reference: "Troubleshooting Shorts"
+      question: "An ideal operational amplifier (op-amp) has:",
+      answers: ["Zero input impedance", "Infinite output impedance", "Infinite open-loop gain", "Unity gain"],
+      correctIndex: 2,
+      explanation: "Ideal op-amp characteristics include infinite gain, infinite input impedance, and zero output impedance.",
+      reference: "Op-Amp Characteristics"
     }
   ],
 
   // ==================== FINAL JEOPARDY ====================
 
   FINAL: {
-    cat: "Applied Circuit Troubleshooting",
+    cat: "Solid State Device Troubleshooting",
     difficulty: 5,
     timeLimit: 30,
-    question: "A component does not work. A technician measures 28V at the component's positive terminal and 26V at its ground terminal (relative to airframe). The circuit breaker is NOT tripped. What is the most likely fault?",
+    question: "A technician is testing a suspected faulty NPN transistor with a DMM diode test function. From base to emitter, the meter shows 0.65V. From base to collector, it shows 0.63V. From collector to emitter (both directions), it shows OL. What is the transistor's condition?",
     answers: [
-      "A short circuit in the power wire",
-      "A high-resistance (open) ground connection",
-      "A failed (open) component",
-      "A shorted (failed) component"
+      "The transistor is shorted",
+      "The transistor is open",
+      "The transistor is good",
+      "The base-emitter junction is faulty"
     ],
-    correctIndex: 1,
-    explanation: "A good ground should read near 0V. Reading 26V on the ground wire means the ground path is open or has high resistance, and the voltage is 'floating' up to the supply voltage.",
-    reference: "Troubleshooting Ground Faults"
+    correctIndex: 2,
+    explanation: "A good NPN shows ~0.6-0.7V from base to emitter and base to collector (forward bias of the two junctions), and OL (open) from collector to emitter since there's no direct path. These readings indicate a healthy transistor.",
+    reference: "Transistor Testing"
   }
 };
 
